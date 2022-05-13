@@ -1,5 +1,5 @@
 //
-//  HomeViewController+CollectionView.swift
+//  HomeViewControllerExtension+CollectionView.swift
 //  SportApplication
 //
 //  Created by Abdelrhman Ahmed on 13/05/2022.
