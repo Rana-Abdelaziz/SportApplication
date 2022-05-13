@@ -11,6 +11,7 @@ import UIKit
 class HomeCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var sportName: UILabel!
     static let identifier = "HomeCollectionViewCell"
     
     override func awakeFromNib() {
@@ -18,9 +19,22 @@ class HomeCollectionViewCell: UICollectionViewCell {
         
     }
     
-    public func configure(with image: UIImage) {
-        imageView.image = image
+    func displaySportName(strSport: String) {
+        print("name: \(strSport)")
+        sportName.text = strSport
+//        todoId.text = String(id)
     }
+    
+    func displaySportImage(strSportThumb: String) {
+        print("image: \(strSportThumb)")
+//        todoTitle.text = title
+    }
+    
+    
+    
+//    public func configure(with image: UIImage) {
+//        imageView.image = image
+//    }
     
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
