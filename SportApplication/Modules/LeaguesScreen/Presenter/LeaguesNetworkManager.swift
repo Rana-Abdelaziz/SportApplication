@@ -24,13 +24,14 @@ class LeaguesNetworkManager{
                                print(DataResponse.result.value!)
                                let result = try JSONDecoder().decode(LeaguesResualt.self,from:itemsInJson!)
                 print("resualt is ",result.countries![0].idLeague ?? [])
+                completionHandler(result,nil)
 
 
 
             }catch{
                 print("error while decoding")
+                completionHandler(nil,Error.self as? Error)
             }
-            //let res = DataResponse.result.value!["countries"]
                        
             
         }
