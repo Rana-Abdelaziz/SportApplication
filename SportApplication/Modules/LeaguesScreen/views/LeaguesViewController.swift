@@ -10,13 +10,13 @@ import UIKit
 
 class LeaguesViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
   
-   
+   var sportName=""
     var leaguesList:[LeaguesModel] = []
     @IBOutlet weak var tableView : UITableView!
     override func viewDidLoad() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register()
+        tableView.register(UINib(nibName: "LeaguesTableViewCell", bundle: nil), forCellReuseIdentifier: "LeaguesTableViewCell")
         super.viewDidLoad()
         
         let network = LeaguesNetworkManager(baseUrl: "https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?s=Soccer")
@@ -41,8 +41,10 @@ class LeaguesViewController: UIViewController , UITableViewDelegate , UITableVie
       
       
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-          <#code#>
-      }
+       let cell = tableView.dequeueReusableCell(withIdentifier: "LeaguesTableViewCell", for: indexPath) as! LeaguesTableViewCell
+        cell.title.text = leaguesList[indexPath.row].strLeague
+       return cell
+    }
       
     
 
