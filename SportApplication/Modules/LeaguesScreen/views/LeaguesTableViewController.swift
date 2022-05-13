@@ -22,7 +22,6 @@ class LeaguesTableViewController: UITableViewController {
                     guard let resualt = leagues else { return }
                     self?.leaguesList = resualt.countries ?? []
                     print(resualt)
-                    //print("Completion handler success \(todos.count)")
                    
                 }
             })
