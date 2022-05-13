@@ -1,20 +1,17 @@
 //
-//  HomeViewController.swift
+//  HomeViewController+CollectionView.swift
 //  SportApplication
 //
-//  Created by Abdelrhman Ahmed on 12/05/2022.
+//  Created by Abdelrhman Ahmed on 13/05/2022.
 //  Copyright © 2022 Rana&Abdelrhman. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class HomeViewController: UIViewController {
-
-    @IBOutlet var collectionView: UICollectionView!
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    func setupCollectionView(){
         let layout = UICollectionViewFlowLayout()
         collectionView.collectionViewLayout = layout
         layout.itemSize = CGSize(width: (self.view.bounds.width - 48) / 2, height: (self.view.bounds.width + 20) / 2)
@@ -23,24 +20,7 @@ class HomeViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     // delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -50,13 +30,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     // data source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return homePresenter.getSportsCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as! HomeCollectionViewCell
         
-        cell.configure(with: UIImage(named: "placeholder")!)
+        homePresenter.configure(cell: cell, for: indexPath.row)
         
         return cell
     }
@@ -68,11 +48,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: (self.view.bounds.width - 48) / 2, height: (self.view.bounds.width + 20) / 2)
-        
-//        let width = collectionView.frame.width / 2 - 1
-//        return CGSize(width: width, height: width)
-        
-//        return CGSize.init(width: 120, height: 120)
         
     }
     
