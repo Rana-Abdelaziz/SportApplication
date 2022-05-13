@@ -49,6 +49,12 @@ class LeaguesViewController: UIViewController , UITableViewDelegate , UITableVie
         let image:UIImage = UIImage(named: "youtube.png")!
         cell.youtubeImage.setBackgroundImage(image, for: UIControl.State.normal)
         if leaguesList[indexPath.row].strYoutube == ""{
+            cell.youtubeImage.isUserInteractionEnabled = false
+            let blur = UIVisualEffectView(effect: UIBlurEffect(style:
+                        UIBlurEffect.Style.light))
+            blur.frame = cell.youtubeImage.bounds
+            blur.isUserInteractionEnabled = false //This allows touches to forward to the button.
+            cell.youtubeImage.insertSubview(blur, at: 0)
 //            let alert : UIAlertController = UIAlertController(title: "warning", message: "Sorry but this League has no video on Youtube", preferredStyle: .actionSheet)
 //            alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
 //            self.present(alert,animated: true,completion: nil)
