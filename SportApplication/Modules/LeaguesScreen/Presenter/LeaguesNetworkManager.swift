@@ -16,50 +16,25 @@ class LeaguesNetworkManager{
         self.baseUrl = baseUrl
     }
     
-    //endPoint: String,
-    func getLeagues(completionHandler: @escaping (String?, Error?) -> ()) {
+    func getLeagues(completionHandler: @escaping (LeaguesResualt?, Error?) -> ()) {
         
-        Alamofire.request(self.baseUrl , method: .get,encoding: URLEncoding.default).responseJSON { (DataResponse)->Void in
-            //print("Data",DataResponse.data)
-          
-            
+        Alamofire.request(self.baseUrl , method: .get).responseJSON { (DataResponse) -> Void in
             do{
-//                let itemsInJson = try     JSONSerialization.data(withJSONObject:DataResponse.data!)
-                //let itemsInJson = try JSONSerialization.data(withJSONObject:DataResponse.result.value!)
-                let itemsInJson = DataResponse.data 
-                print(DataResponse.result.value!)
-                let result = try JSONDecoder().decode([LeaguesModel].self,from:itemsInJson!)
-                print(result[0].idLeague ?? "nothing" )
+                let itemsInJson = DataResponse.data
+                               print(DataResponse.result.value!)
+                               let result = try JSONDecoder().decode(LeaguesResualt.self,from:itemsInJson!)
+                print("resualt is ",result.countries![0].idLeague ?? [])
+
+
+
             }catch{
                 print("error while decoding")
             }
-            
+            //let res = DataResponse.result.value!["countries"]
+                       
             
         }
-//        print(r)
-//        guard let jsn = r.response else{
-//            print("error")
-//            completionHandler(nil,"Error" as? Error)
-//            return
-//        }
-//        completionHandler("okii",nil)
-//        print(jsn)
-        
-            //.responseDecodable(of: [LeaguesModel].self)
-//        { (response) in
-//            print("result: \(response)")
-//
-//            let result = response.result
-//            switch result {
-//            case .success(let todos):
-//                print("Result SUCCESS")
-//                completionHandler(todos, nil)
-//            case .failure(let error):
-//                print("Result FAILED")
-//                completionHandler(nil, error)
-//            }
-//
-//        }
+
     }
     
 }

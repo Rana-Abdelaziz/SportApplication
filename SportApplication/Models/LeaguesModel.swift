@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class LeaguesModel:Decodable{
+class LeaguesModel:Codable{
     //id
     var idLeague:String?
     //title

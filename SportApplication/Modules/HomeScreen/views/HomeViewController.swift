@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
                 guard let todos = todos else { return }
                 //self.todos = todos
                 print(todos)
-                print("Completion handler success \(todos.count)")
+                //print("Completion handler success \(todos.count)")
                // self.view?.fetchingDataSuccess()
             }
         })
