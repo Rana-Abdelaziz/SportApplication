@@ -21,7 +21,7 @@ class LeaguesNetworkManager{
         Alamofire.request(self.baseUrl , method: .get).responseJSON { (DataResponse) -> Void in
             do{
                 let itemsInJson = DataResponse.data
-                               print(DataResponse.result.value!)
+                               //print(DataResponse.result.value!)
                                let result = try JSONDecoder().decode(LeaguesResualt.self,from:itemsInJson!)
                 print("resualt is ",result.countries![0].idLeague ?? [])
                 completionHandler(result,nil)

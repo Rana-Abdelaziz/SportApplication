@@ -8,7 +8,7 @@ target 'SportApplication' do
   # Pods for SportApplication
   pod 'Alamofire'
   pod 'Kingfisher'
-
+  pod 'Toaster'
   target 'SportApplicationTests' do
     inherit! :search_paths
     # Pods for testing
