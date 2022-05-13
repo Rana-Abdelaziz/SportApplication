@@ -2,15 +2,15 @@
 //  HomeCollectionViewCell.swift
 //  SportApplication
 //
-//  Created by Abdelrhman Ahmed on 12/05/2022.
+//  Created by Abdelrhman Ahmed on 13/05/2022.
 //  Copyright © 2022 Rana&Abdelrhman. All rights reserved.
 //
 
 import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet var imageView: UIImageView!
+    
+    @IBOutlet var sportImage: UIImageView!
     @IBOutlet weak var sportName: UILabel!
     static let identifier = "HomeCollectionViewCell"
     

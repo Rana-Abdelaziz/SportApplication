@@ -49,6 +49,7 @@ class HomeVCPresenter {
                 guard let sports = sports else { return }
                 self.sports = sports.sports
                 print("Completion handler success \(self.sports.count)")
+                print("git")
                 self.view?.fetchingDataSuccess()
             }
         })
