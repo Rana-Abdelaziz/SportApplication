@@ -10,6 +10,9 @@ import UIKit
 
 class LeaguesTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var youtubeImage: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var logoImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
