@@ -27,7 +27,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         collectionView.deselectItem(at: indexPath, animated: true)
         print("collection cell tapped!")
         
-        let leaguesViewController = storyboard?.instantiateViewController(withIdentifier: "LeaguesTableViewController") as! LeaguesViewController
+        let leaguesViewController = storyboard?.instantiateViewController(withIdentifier: "leaguesViewController") as! LeaguesViewController
         self.navigationController?.pushViewController(leaguesViewController, animated: true)
     }
     
