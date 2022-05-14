@@ -1,5 +1,5 @@
 //
-//  MyResult.swift
+//  SportsResult.swift
 //  SportApplication
 //
 //  Created by Abdelrhman Ahmed on 13/05/2022.
