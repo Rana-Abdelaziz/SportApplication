@@ -201,7 +201,7 @@
 		93632554F6DE1DDC93E8DA748286E2E8 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		99DADC1098F193DDFFBF624B3F799EE2 /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Box.swift; sourceTree = "<group>"; };
 		9A4E134A9DB75AFF4B9FD64CBCEF9FFB /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A13BE49B0AFBF92D1AC3626DD9FDA6A4 /* Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kingfisher.swift; path = Sources/Kingfisher.swift; sourceTree = "<group>"; };
 		A84F7D6C36F30B0886474E4572CCE22A /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		A9A55D3F45F3BC51B0754318B50CDD5C /* Pods-SportApplication */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SportApplication"; path = Pods_SportApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,7 +214,7 @@
 		B0DB8053F7F5755E25DA18D90D9F9351 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		B7B3845BBA785A002C08458393745CED /* ToastWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToastWindow.swift; path = Sources/ToastWindow.swift; sourceTree = "<group>"; };
 		BAA35A9B7EA0F87DBA77F11DB69A4863 /* Pods-SportApplication-SportApplicationUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SportApplication-SportApplicationUITests-umbrella.h"; sourceTree = "<group>"; };
-		BD810337F4A305D60D9250A197AA1EF1 /* Toaster */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Toaster; path = Toaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD810337F4A305D60D9250A197AA1EF1 /* Toaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D5696B8FC6DD66B38F51C0494A6ACD /* Toaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Toaster.release.xcconfig; sourceTree = "<group>"; };
 		C347F2D34FA2F2CD6B369005CDC844F9 /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Kingfisher.modulemap; sourceTree = "<group>"; };
 		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -313,7 +313,7 @@
 				A9A55D3F45F3BC51B0754318B50CDD5C /* Pods-SportApplication */,
 				CF78DF1CAF29CCBC345D713D5A1E8253 /* Pods-SportApplication-SportApplicationUITests */,
 				08FADFA81F81251ECAA5F51B718FDF14 /* Pods-SportApplicationTests */,
-				BD810337F4A305D60D9250A197AA1EF1 /* Toaster */,
+				BD810337F4A305D60D9250A197AA1EF1 /* Toaster.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -347,7 +347,6 @@
 				1D0DFDFA9A8A5E98A6699492C6D575D2 /* UIButton+Kingfisher.swift */,
 				7ACAC641300F6CD9EA1717EC1C1254A1 /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -410,7 +409,6 @@
 				4D6B0AC48C906E742C3109FAD20686D2 /* UIApplication+Load.swift */,
 				1DD09F055DE82BCDA7D011F139CE08B3 /* Support Files */,
 			);
-			name = Toaster;
 			path = Toaster;
 			sourceTree = "<group>";
 		};
@@ -436,7 +434,6 @@
 				7F5C7043E06FFED31A35C76D4D618883 /* Validation.swift */,
 				3591CA21111ADDF9615E4558BE0993DF /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -640,7 +637,7 @@
 			);
 			name = Toaster;
 			productName = Toaster;
-			productReference = BD810337F4A305D60D9250A197AA1EF1 /* Toaster */;
+			productReference = BD810337F4A305D60D9250A197AA1EF1 /* Toaster.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E8022D22FAA6690B5E1C379C1BCE1491 /* Kingfisher */ = {
