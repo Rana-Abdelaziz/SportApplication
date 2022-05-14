@@ -7,4 +7,22 @@
 //
 
 import Foundation
-class TeamPresenter{}
+class TeamPresenter : TeamsPresnterProtocol{
+  
+    func getTeams(url:String,completionHandler: @escaping (TeamsResualt?, Error?) -> ()){
+        let network = TeamNetworkManager(baseUrl: url)
+        network.getTeamDetailes { (TeamsResualt , Error) in
+            guard let result = TeamsResualt else{
+                completionHandler(nil,Error)
+                return
+            }
+            completionHandler(result,nil)
+            
+        }
+    }
+    
+    
+}
+protocol TeamsPresnterProtocol {
+    func getTeams(url:String,completionHandler: @escaping (TeamsResualt?, Error?) -> ())
+}

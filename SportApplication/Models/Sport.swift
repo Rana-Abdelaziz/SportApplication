@@ -8,15 +8,6 @@
 
 import Foundation
 
-//struct Sport: Codable {
-//    let idSport: String
-//    let strSport: String
-//    let strFormat: String
-//    let strSportThumb: String
-//    let strSportIconGreen: String
-//    let strSportDescription: String
-//}
-
 struct Sport: Codable {
     var idSport: String?
     var strSport: String?

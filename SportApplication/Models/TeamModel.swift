@@ -8,5 +8,13 @@
 
 import Foundation
 class TeamModel:Decodable{
-    
+    var idTeam:String?
+    var strTwitter:String?
+    var strInstagram :String?
+    var strFacebook: String?
+    var strWebsite : String?
+    var strStadium : String?
+    var strLeague : String?
+    var strDescriptionEN :String?
+    var strCountry : String?
 }
