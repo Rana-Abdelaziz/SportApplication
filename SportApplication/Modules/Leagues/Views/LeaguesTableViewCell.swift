@@ -2,7 +2,7 @@
 //  LeaguesTableViewCell.swift
 //  SportApplication
 //
-//  Created by Rana on 5/13/22.
+//  Created by Abdelrhman Ahmed on 14/05/2022.
 //  Copyright © 2022 Rana&Abdelrhman. All rights reserved.
 //
 
@@ -32,7 +32,7 @@ class LeaguesTableViewCell: UITableViewCell {
 //        else{
 //            controller.showAlert()
 //        }
-//         
+//
       }
         
     }
