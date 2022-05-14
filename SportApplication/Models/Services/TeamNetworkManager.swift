@@ -19,9 +19,9 @@ class TeamNetworkManager{
            self.baseUrl = baseUrl
        }
        
-    func getTeamDetailes(myParameters:String,completionHandler: @escaping (TeamsResualt?, Error?) -> ()) {
+    func getTeamDetailes(completionHandler: @escaping (TeamsResualt?, Error?) -> ()) {
            
-        Alamofire.request(self.baseUrl ,method: .get, parameters: ["":myParameters] ).responseJSON { (DataResponse) -> Void in
+        Alamofire.request(self.baseUrl ,method: .get ).responseJSON { (DataResponse) -> Void in
                do{
                    let itemsInJson = DataResponse.data
                                   //print(DataResponse.result.value!)
