@@ -269,8 +269,8 @@
 		BC1F9ADD282EC6860041CAF2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				BC1F9AED282EC7DF0041CAF2 /* Presenter */,
 				BC1F9AEA282EC7C20041CAF2 /* Interactor */,
+				BC1F9AED282EC7DF0041CAF2 /* Presenter */,
 				BC1F9AE5282EC7390041CAF2 /* CollectionViewCell */,
 				BC1F9ADE282EC6970041CAF2 /* View */,
 			);

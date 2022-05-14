@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeCollectionViewCell: UICollectionViewCell {
 
@@ -20,22 +21,13 @@ class HomeCollectionViewCell: UICollectionViewCell {
         }
         
         func displaySportName(strSport: String) {
-            print("name: \(strSport)")
             sportName.text = strSport
-    //        todoId.text = String(id)
         }
         
         func displaySportImage(strSportThumb: String) {
-            print("image: \(strSportThumb)")
-    //        todoTitle.text = title
+            sportImage.kf.setImage(with: URL(string: strSportThumb), placeholder: UIImage(named: "placeholder.jpeg"), options: nil, progressBlock: nil, completionHandler: nil)
         }
-        
-        
-        
-    //    public func configure(with image: UIImage) {
-    //        imageView.image = image
-    //    }
-        
+    
         static func nib() -> UINib {
             return UINib(nibName: identifier, bundle: nil)
         }

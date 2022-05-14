@@ -26,6 +26,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         print("collection cell tapped!")
+        
+        let leaguesViewController = storyboard?.instantiateViewController(withIdentifier: "LeaguesTableViewController") as! LeaguesTableViewController
+        self.navigationController?.pushViewController(leaguesViewController, animated: true)
     }
     
     // data source
@@ -47,7 +50,13 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: (self.view.bounds.width - 48) / 2, height: (self.view.bounds.width + 20) / 2)
+        
+        
+//        return CGSize(width: (self.view.bounds.width - 48) / 2, height: (self.view.bounds.width + 20) / 2)
+//        return CGSize(width: (self.view.bounds.width - 48) / 2, height: (self.view.bounds.width - 48) / 2)
+//        let width = (collectionView.frame.width - 2) / 3
+        let width = (collectionView.frame.width - 10) / 2
+        return CGSize(width: width, height: width)
         
     }
     
