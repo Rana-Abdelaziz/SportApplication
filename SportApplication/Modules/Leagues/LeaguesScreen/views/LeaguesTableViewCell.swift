@@ -14,9 +14,11 @@ class LeaguesTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var logoImage: UIImageView!
     var youtubeLink:String = ""
+    //var controller:LeaguesViewController = LeaguesViewController()
+    
     @IBAction func goToYoutube(_ sender: Any) {
       let youtubeId = "SxTYjptEzZs"
-      var youtubeUrl = NSURL(string:"youtube://\(youtubeId)")!
+        let youtubeUrl = NSURL(string:"youtube://\(youtubeId)")!
         
       if UIApplication.shared.canOpenURL(youtubeUrl as URL){
           UIApplication.shared.openURL(youtubeUrl as URL)
@@ -24,11 +26,13 @@ class LeaguesTableViewCell: UITableViewCell {
       
         let myUrl = youtubeLink
         if((myUrl) != ""){
-            //  myUrl="https://www.youtube.com/watch?v=pt26kmLhafc"
             let youtubeUrl = NSURL(string:"https://"+myUrl)!
             UIApplication.shared.openURL(youtubeUrl as URL)
         }
-         
+//        else{
+//            controller.showAlert()
+//        }
+//         
       }
         
     }
