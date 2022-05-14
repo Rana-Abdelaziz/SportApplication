@@ -14,6 +14,8 @@ class LeaguesModel:Codable{
     var strLeague:String?
     //image
     var strPoster:String?
+    var strLogo:String?
+
     //youtube link
     var strYoutube:String?
 //    var dateFirstEvent:String?
@@ -22,7 +24,7 @@ class LeaguesModel:Codable{
 //    var idSoccerXML:String?
 //    var intDivision:Int?
 //    var intFormedYear:Int?
-//    var strBadge:String?
+    var strBadge:String?
 //    var strBanner:String?
 //    var strComplete:String?
 //    var strCountry:String?
@@ -49,7 +51,6 @@ class LeaguesModel:Codable{
 //    var strFanart4:String?
 //    var strLeagueAlternate:String?
 //    var strInstagram:String?
-//    var strLogo:String?
 //    var strNaming:String?
 //    var strRSS :String
 //    var strSport:String?
