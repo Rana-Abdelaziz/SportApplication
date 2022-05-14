@@ -10,9 +10,9 @@ import Foundation
 
 class LeaguesPresenter:LeaguesProtocol{
 
-    func getLeagues(url:String,completionHandler: @escaping (LeaguesResualt?, Error?) -> ()){
+    func getLeagues(parameters:String,url:String,completionHandler: @escaping (LeaguesResualt?, Error?) -> ()){
         let network = LeaguesNetworkManager(baseUrl: url)
-        network.getLeagues(completionHandler: { leagues, error in
+        network.getLeagues(param: parameters,completionHandler: { leagues, error in
 
                          if let error = error {
                              print(error)
@@ -26,5 +26,5 @@ class LeaguesPresenter:LeaguesProtocol{
     }
 }
 protocol LeaguesProtocol {
-    func getLeagues(url:String,completionHandler: @escaping (LeaguesResualt?, Error?) -> ())
+    func getLeagues(parameters:String,url:String,completionHandler: @escaping (LeaguesResualt?, Error?) -> ())
 }

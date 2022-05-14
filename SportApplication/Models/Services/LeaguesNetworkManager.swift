@@ -16,9 +16,9 @@ class LeaguesNetworkManager{
         self.baseUrl = baseUrl
     }
     
-    func getLeagues(completionHandler: @escaping (LeaguesResualt?, Error?) -> ()) {
+    func getLeagues(param:String,completionHandler: @escaping (LeaguesResualt?, Error?) -> ()) {
         
-        Alamofire.request(self.baseUrl , method: .get).responseJSON { (DataResponse) -> Void in
+        Alamofire.request(self.baseUrl , method: .get, parameters: ["s":param]).responseJSON { (DataResponse) -> Void in
             do{
                 let itemsInJson = DataResponse.data
                                //print(DataResponse.result.value!)
