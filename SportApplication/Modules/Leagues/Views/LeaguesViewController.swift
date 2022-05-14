@@ -12,7 +12,8 @@ import Kingfisher
 
 class LeaguesViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
   
-   var sportName=""
+   var sportName="Soccer"
+    var flag = "all"
     var leaguesList:[LeaguesModel] = []
     var leaguesPresenter:LeaguesProtocol?
     @IBOutlet weak var tableView : UITableView!
@@ -22,8 +23,8 @@ class LeaguesViewController: UIViewController , UITableViewDelegate , UITableVie
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "LeaguesTableViewCell", bundle: nil), forCellReuseIdentifier: "LeaguesTableViewCell")
-        let myUrl = "https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?s=Soccer"
-        leaguesPresenter?.getLeagues(url: myUrl, completionHandler: { [weak self] leagues, error in
+        let myUrl = "https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?s="
+        leaguesPresenter?.getLeagues(parameters: sportName ,url: myUrl, completionHandler: { [weak self] leagues, error in
             print("Completion handler ")
             if let error = error {
                 print(error)
