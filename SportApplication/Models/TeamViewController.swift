@@ -11,6 +11,7 @@ import UIKit
 class TeamViewController: UIViewController {
     
     let presnter :TeamsPresnterProtocol = TeamPresenter()
+    var team = TeamModel()
     
     @IBOutlet weak var teamTshirtImg: UIImageView!
     @IBOutlet weak var backgroundImg: UIImageView!
@@ -37,12 +38,22 @@ class TeamViewController: UIViewController {
         super.viewDidLoad()
         presnter.getTeams(url: "https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=English%20Premier%20League") { (TeamsResualt, Error) in
             guard let r = TeamsResualt else{
-                print(Error)
-              //  self.myLable.text = Error as! String
+                print(Error ?? "Error fetching teams")
                 return
             }
-           // self.myLable.text = r.teams![0].strDescriptionEN
+            self.team = r.teams![0]
+            self.teamName.text = self.team.strTeam
+            self.countryName.text = self.team.strCountry
+            self.stadiumName.text = self.team.strStadium
+            self.leagueName.text = self.team.strLeague
+            self.teamImg.layer.cornerRadius = self.teamImg.frame.size.width/2
+            self.teamImg.clipsToBounds = true
+            self.teamImg.kf.setImage(with: URL(string: self.team.strTeamBadge!), placeholder: UIImage(named: "youtube.png"), options: nil, progressBlock: nil, completionHandler: nil)
+            
+            self.backgroundImg.kf.setImage(with: URL(string: self.team.strStadiumThumb!), placeholder: UIImage(named: "youtube.png"), options: nil, progressBlock: nil, completionHandler: nil)
+            self.teamTshirtImg.kf.setImage(with: URL(string: self.team.strTeamJersey!), placeholder: UIImage(named: "youtube.png"), options: nil, progressBlock: nil, completionHandler: nil)
             print(r.teams)
+            
         }
         // Do any additional setup after loading the view.
     }

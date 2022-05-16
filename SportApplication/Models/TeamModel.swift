@@ -9,6 +9,7 @@
 import Foundation
 class TeamModel:Decodable{
     var idTeam:String?
+    var strTeam:String?
     var strTwitter:String?
     var strInstagram :String?
     var strFacebook: String?
@@ -17,4 +18,7 @@ class TeamModel:Decodable{
     var strLeague : String?
     var strDescriptionEN :String?
     var strCountry : String?
+    var strStadiumThumb : String?
+    var strTeamJersey: String?
+    var strTeamBadge : String?
 }

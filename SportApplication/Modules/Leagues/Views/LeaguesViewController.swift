@@ -22,6 +22,7 @@ class LeaguesViewController: UIViewController , UITableViewDelegate , UITableVie
         leaguesPresenter = LeaguesPresenter()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = 85
         tableView.register(UINib(nibName: "LeaguesTableViewCell", bundle: nil), forCellReuseIdentifier: "LeaguesTableViewCell")
         let myUrl = "https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?s="
         leaguesPresenter?.getLeagues(parameters: sportName ,url: myUrl, completionHandler: { [weak self] leagues, error in
@@ -39,17 +40,25 @@ class LeaguesViewController: UIViewController , UITableViewDelegate , UITableVie
         })
 
     }
+    func numberOfSections(in tableView: UITableView) -> Int {
+         return leaguesList.count
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return leaguesList.count
+        return 1
       }
       
       
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "LeaguesTableViewCell", for: indexPath) as! LeaguesTableViewCell
-        cell.title.text = leaguesList[indexPath.row].strLeague
-        let image:UIImage = UIImage(named: "youtube.png")!
-        cell.youtubeImage.setBackgroundImage(image, for: UIControl.State.normal)
-        if leaguesList[indexPath.row].strYoutube == ""{
+        cell.title.text = leaguesList[indexPath.section].strLeague
+        cell.layer.cornerRadius = 15
+        cell.layer.masksToBounds = false
+        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOpacity = 0.23
+       // cell.layer.borderWidth = 1.0
+        //cell.layer.borderColor = UIColor.red.cgColor
+        if leaguesList[indexPath.section].strYoutube == ""{
             
 //            cell.youtubeImage.isUserInteractionEnabled = false
 //            let blur = UIVisualEffectView(effect: UIBlurEffect(style:
@@ -60,17 +69,20 @@ class LeaguesViewController: UIViewController , UITableViewDelegate , UITableVie
 
             
         }else{
-            cell.youtubeLink = leaguesList[indexPath.row].strYoutube ?? ""
+            cell.youtubeLink = leaguesList[indexPath.section].strYoutube ?? ""
         }
         
-       let url = leaguesList[indexPath.row].strBadge
+       let url = leaguesList[indexPath.section].strBadge
         cell.logoImage.kf.setImage(with: URL(string: url!), placeholder: UIImage(named: "youtube.png"), options: nil, progressBlock: nil, completionHandler: nil)
 
             
         
        return cell
     }
-      
+      func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+          return 10
+      }
+
 
     func showAlert(){
        let alert : UIAlertController = UIAlertController(title: "warning", message: "Sorry but this League has no video on Youtube", preferredStyle: .actionSheet)
