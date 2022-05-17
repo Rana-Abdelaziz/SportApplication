@@ -52,10 +52,10 @@ class LeaguesViewController: UIViewController , UITableViewDelegate , UITableVie
        let cell = tableView.dequeueReusableCell(withIdentifier: "LeaguesTableViewCell", for: indexPath) as! LeaguesTableViewCell
         cell.title.text = leaguesList[indexPath.section].strLeague
         cell.layer.cornerRadius = 15
-        cell.layer.masksToBounds = false
-        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-        cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOpacity = 0.23
+  //      cell.layer.masksToBounds = false
+//        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+//        cell.layer.shadowColor = UIColor.black.cgColor
+//        cell.layer.shadowOpacity = 0.23
        // cell.layer.borderWidth = 1.0
         //cell.layer.borderColor = UIColor.red.cgColor
         if leaguesList[indexPath.section].strYoutube == ""{
