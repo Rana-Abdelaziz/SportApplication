@@ -45,9 +45,9 @@ class TeamsVCPresenter {
     }
     
     func configure(cell: TeamsCollectionViewCell, for index: Int) {
-        let teamsResult = teamsResult[index]
-        cell.displayTeamName(strTeam: teamsResult.strTeam ?? "")
-        cell.displayTeamImage(strTeamBadge: teamsResult.strTeamBadge ?? "")
+        let team = teamsResult[index]
+        cell.displayTeamName(strTeam: team.strTeam ?? "")
+        cell.displayTeamImage(strTeamBadge: team.strTeamBadge ?? "")
     }
     
 }
