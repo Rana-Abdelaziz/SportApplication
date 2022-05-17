@@ -150,7 +150,7 @@
         <!--Team View Controller-->
         <scene sceneID="3iD-zE-xeR">
             <objects>
-                <viewController id="gzD-fh-w9a" customClass="TeamViewController" customModule="SportApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TeamViewController" id="gzD-fh-w9a" customClass="TeamViewController" customModule="SportApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FIq-cq-lUc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

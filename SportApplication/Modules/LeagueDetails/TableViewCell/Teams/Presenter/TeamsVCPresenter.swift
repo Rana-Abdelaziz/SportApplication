@@ -50,4 +50,8 @@ class TeamsVCPresenter {
         cell.displayTeamImage(strTeamBadge: teamsResult.strTeamBadge ?? "")
     }
     
+    func getTeamAtIndex(index: Int) -> TeamModel {
+        return teamsResult[index]
+    }
+    
 }

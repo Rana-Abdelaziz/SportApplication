@@ -11,6 +11,8 @@ import UIKit
 
 extension TeamsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    
+    
     func setupCollectionView(){
         
         let layout = UICollectionViewFlowLayout()
@@ -24,13 +26,35 @@ extension TeamsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
     }
     
     // delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
-        print("collection cell tapped!")
+        print("team tapped!")
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        let teamDetailsVC = storyboard.instantiateViewController(withIdentifier: "TeamViewController") as! TeamViewController
+
+        let team = teamsPresenter.getTeamAtIndex(index: indexPath.row)
+        teamDetailsVC.team = team
+        print("team selected \(team.strTeam)")
+//        self.present
+        let navigationController = UINavigationController(nibName: "mainNavController", bundle: nil)
+        navigationController.pushViewController(teamDetailsVC, animated: true)
+//        self.navigation
+        
+//        let leaguesViewController = storyboard?.instantiateViewController(withIdentifier: "LeaguesTableViewController") as! LeaguesViewController
+//
+//        let sportName = homePresenter.getSportNameAtIndex(index: indexPath.row)
+//        leaguesViewController.sportName = sportName
+//
+//        print("collection cell tapped! \(sportName)")
+//        leaguesViewController.flag = "all"
+//        self.navigationController?.pushViewController(leaguesViewController, animated: true)
         
     }
     

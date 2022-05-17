@@ -230,13 +230,6 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		25CCBCBF282C646D0056F06E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		25CCBCC1282C64A90056F06E /* LeaguesScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,7 +276,6 @@
 			children = (
 				BC205DC428334142001A771F /* Utils */,
 				25F03E43282DB74500EED044 /* Models */,
-				25CCBCBF282C646D0056F06E /* Views */,
 				25CCBCBD282C642B0056F06E /* Modules */,
 				25DFB86B282BEC5D00BE87A6 /* AppDelegate.swift */,
 				25DFB86D282BEC5D00BE87A6 /* SceneDelegate.swift */,
