@@ -1,5 +1,5 @@
 //
-//  LatestResultsTableViewCellExtension+CollectionView.swift
+//  TeamsTableViewCellExtension+CollectionView.swift
 //  SportApplication
 //
 //  Created by Abdelrhman Ahmed on 17/05/2022.
@@ -9,18 +9,18 @@
 import Foundation
 import UIKit
 
-extension LatestResultsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension TeamsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func setupCollectionView(){
         
         let layout = UICollectionViewFlowLayout()
         collectionView.collectionViewLayout = layout
-//        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .horizontal
         
         let width = collectionView.frame.height
         layout.itemSize = CGSize(width: 350, height: 250)
         
-        collectionView.register(LatestResultsCollectionViewCell.nib(), forCellWithReuseIdentifier: LatestResultsCollectionViewCell.identifier)
+        collectionView.register(TeamsCollectionViewCell.nib(), forCellWithReuseIdentifier: TeamsCollectionViewCell.identifier)
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -36,15 +36,15 @@ extension LatestResultsTableViewCell: UICollectionViewDelegate, UICollectionView
     
     // data source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return latestResultsPresenter.getLatestResultsCount()
+        return teamsPresenter.getTeamsCount()
 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LatestResultsCollectionViewCell.identifier, for: indexPath) as! LatestResultsCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TeamsCollectionViewCell.identifier, for: indexPath) as! TeamsCollectionViewCell
         
-        latestResultsPresenter.configure(cell: cell, for: indexPath.row)
+        teamsPresenter.configure(cell: cell, for: indexPath.row)
         
         return cell
     }
@@ -52,7 +52,7 @@ extension LatestResultsTableViewCell: UICollectionViewDelegate, UICollectionView
 }
 
 
-extension LatestResultsCollectionViewCell: UICollectionViewDelegateFlowLayout {
+extension TeamsCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         

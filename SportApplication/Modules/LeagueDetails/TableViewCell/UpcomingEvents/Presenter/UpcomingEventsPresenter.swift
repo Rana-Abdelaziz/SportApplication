@@ -22,20 +22,24 @@ protocol UpcomingEventsCellView {
 class UpcomingEventsPresenter {
     
     private weak var view: UpcomingEventsView?
-    private let interactor = UpcomingEventsInteractor(baseUrl: "https://www.thesportsdb.com/api/v1/json/2/")
+    private let interactor = UpcomingEventsInteractor(baseUrl: Constants.BASE_URL)
     private var upcomingEvents = [UpcomingEvent]()
     
     init(view: UpcomingEventsView) {
         self.view = view
     }
     
-    func viewDidLoad() {
-        getUpcomingEvents()
-    }
+//    func viewDidLoad(leagueId: String?) {
+////        guard let league = leagueId else {
+////            return
+////        }
+//        print("presenter leauge \(leagueId)")
+//        getUpcomingEvents(leagueId: leagueId)
+//    }
     
-    func getUpcomingEvents(){
+    func getUpcomingEvents(leagueId: String){
         view?.showIndicator()
-        interactor.getUpcomingEvents(endPoint: "eventsseason.php?id=4617", completionHandler: { [weak self] upcomingEvents, error in
+        interactor.getUpcomingEvents(endPoint: Constants.END_POINT_EVENTS + leagueId, completionHandler: { [weak self] upcomingEvents, error in
 
             guard let self = self else { return }
             self.view?.hideIndicator()

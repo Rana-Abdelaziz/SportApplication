@@ -59,6 +59,10 @@ class HomeVCPresenter {
         return sports.count
     }
 
+    func getSportNameAtIndex(index: Int) -> String {
+        return sports[index].strSport ?? ""
+    }
+    
     func configure(cell: HomeCollectionViewCell, for index: Int) {
         let sport = sports[index]
         cell.displaySportName(strSport: sport.strSport ?? "")

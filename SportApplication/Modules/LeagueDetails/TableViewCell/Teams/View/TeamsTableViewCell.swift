@@ -1,5 +1,5 @@
 //
-//  LatestResultsTableViewCell.swift
+//  TeamsTableViewCell.swift
 //  SportApplication
 //
 //  Created by Abdelrhman Ahmed on 17/05/2022.
@@ -8,23 +8,19 @@
 
 import UIKit
 
-class LatestResultsTableViewCell: UITableViewCell, LatestResultsView {
+class TeamsTableViewCell: UITableViewCell, TeamsView {
 
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    var latestResultsPresenter: LatestResultsPresenter!
-//    var leagueDetailsPresenter: LeagueDetailsPresenter!
+    var teamsPresenter: TeamsVCPresenter!
 
-    static let identifier = "LatestResultsTableViewCell"
+    static let identifier = "TeamsTableViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         setupCollectionView()
-        latestResultsPresenter = LatestResultsPresenter(view: self)
-//        leagueDetailsPresenter = LeagueDetailsPresenter()
-//        leagueDetailsPresenter.setLatestResults()
-//        latestResultsPresenter.viewDidLoad()
+        teamsPresenter = TeamsVCPresenter(view: self)
+//        teamsPresenter.viewDidLoad()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,8 +33,8 @@ class LatestResultsTableViewCell: UITableViewCell, LatestResultsView {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    func setLeagueId(leagueId: String) {
-        latestResultsPresenter.getLatestResults(leagueId: leagueId)
+    func setLeagueName(leagueName: String) {
+        teamsPresenter.getTeamsResult(leagueName: leagueName)
     }
     
 }

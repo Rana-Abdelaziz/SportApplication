@@ -62,6 +62,22 @@
 		BC205DA528332588001A771F /* LatestResultsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DA428332588001A771F /* LatestResultsInteractor.swift */; };
 		BC205DA7283325A0001A771F /* LatestEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DA6283325A0001A771F /* LatestEvent.swift */; };
 		BC205DA928332606001A771F /* LatestEventsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DA828332606001A771F /* LatestEventsResult.swift */; };
+		BC205DB128332BB9001A771F /* TeamsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DAF28332BB9001A771F /* TeamsTableViewCell.swift */; };
+		BC205DB228332BB9001A771F /* TeamsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC205DB028332BB9001A771F /* TeamsTableViewCell.xib */; };
+		BC205DB428332E67001A771F /* TeamsTableViewCellExtension+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DB328332E67001A771F /* TeamsTableViewCellExtension+CollectionView.swift */; };
+		BC205DB628332E79001A771F /* TeamsTableViewCellExtension+PresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DB528332E79001A771F /* TeamsTableViewCellExtension+PresenterDelegate.swift */; };
+		BC205DB928332EFE001A771F /* TeamsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DB728332EFE001A771F /* TeamsCollectionViewCell.swift */; };
+		BC205DBA28332EFE001A771F /* TeamsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC205DB828332EFE001A771F /* TeamsCollectionViewCell.xib */; };
+		BC205DBC28332FA8001A771F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DBB28332FA8001A771F /* Team.swift */; };
+		BC205DBF28332FC4001A771F /* TeamsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DBE28332FC4001A771F /* TeamsResult.swift */; };
+		BC205DC1283330AB001A771F /* TeamsVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DC0283330AB001A771F /* TeamsVCPresenter.swift */; };
+		BC205DC3283330F8001A771F /* TeamsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DC2283330F8001A771F /* TeamsInteractor.swift */; };
+		BC205DC62833414B001A771F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DC52833414B001A771F /* Constants.swift */; };
+		BC205DC8283344DC001A771F /* EventsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DC7283344DC001A771F /* EventsNetworkManager.swift */; };
+		BC205DCA28334530001A771F /* EventsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DC928334530001A771F /* EventsResult.swift */; };
+		BC205DCC28334542001A771F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DCB28334542001A771F /* Event.swift */; };
+		BC205DCF28334602001A771F /* LeagueDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DCE28334602001A771F /* LeagueDetailsPresenter.swift */; };
+		BC205DD128334860001A771F /* TeamsPresetnerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DD028334860001A771F /* TeamsPresetnerProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +163,22 @@
 		BC205DA428332588001A771F /* LatestResultsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestResultsInteractor.swift; sourceTree = "<group>"; };
 		BC205DA6283325A0001A771F /* LatestEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestEvent.swift; sourceTree = "<group>"; };
 		BC205DA828332606001A771F /* LatestEventsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestEventsResult.swift; sourceTree = "<group>"; };
+		BC205DAF28332BB9001A771F /* TeamsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTableViewCell.swift; sourceTree = "<group>"; };
+		BC205DB028332BB9001A771F /* TeamsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamsTableViewCell.xib; sourceTree = "<group>"; };
+		BC205DB328332E67001A771F /* TeamsTableViewCellExtension+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamsTableViewCellExtension+CollectionView.swift"; sourceTree = "<group>"; };
+		BC205DB528332E79001A771F /* TeamsTableViewCellExtension+PresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamsTableViewCellExtension+PresenterDelegate.swift"; sourceTree = "<group>"; };
+		BC205DB728332EFE001A771F /* TeamsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsCollectionViewCell.swift; sourceTree = "<group>"; };
+		BC205DB828332EFE001A771F /* TeamsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamsCollectionViewCell.xib; sourceTree = "<group>"; };
+		BC205DBB28332FA8001A771F /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		BC205DBE28332FC4001A771F /* TeamsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsResult.swift; sourceTree = "<group>"; };
+		BC205DC0283330AB001A771F /* TeamsVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsVCPresenter.swift; sourceTree = "<group>"; };
+		BC205DC2283330F8001A771F /* TeamsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsInteractor.swift; sourceTree = "<group>"; };
+		BC205DC52833414B001A771F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BC205DC7283344DC001A771F /* EventsNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsNetworkManager.swift; sourceTree = "<group>"; };
+		BC205DC928334530001A771F /* EventsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsResult.swift; sourceTree = "<group>"; };
+		BC205DCB28334542001A771F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		BC205DCE28334602001A771F /* LeagueDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueDetailsPresenter.swift; sourceTree = "<group>"; };
+		BC205DD028334860001A771F /* TeamsPresetnerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsPresetnerProtocols.swift; sourceTree = "<group>"; };
 		D33DD23AEB3BDDC4A13A2BBF /* Pods-SportApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportApplication.release.xcconfig"; path = "Target Support Files/Pods-SportApplication/Pods-SportApplication.release.xcconfig"; sourceTree = "<group>"; };
 		D98BE83FAF5E654AC2D3110D /* Pods_SportApplication_SportApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportApplication_SportApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -218,8 +250,8 @@
 			isa = PBXGroup;
 			children = (
 				25FF166F28304EA300706D24 /* LeaguesTableViewCell.swift */,
-				25FF167028304EA300706D24 /* LeaguesTableViewCell.xib */,
 				25FF167128304EA300706D24 /* LeaguesViewController.swift */,
+				25FF167028304EA300706D24 /* LeaguesTableViewCell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -249,6 +281,7 @@
 		25DFB86A282BEC5D00BE87A6 /* SportApplication */ = {
 			isa = PBXGroup;
 			children = (
+				BC205DC428334142001A771F /* Utils */,
 				25F03E43282DB74500EED044 /* Models */,
 				25CCBCBF282C646D0056F06E /* Views */,
 				25CCBCBD282C642B0056F06E /* Modules */,
@@ -304,6 +337,10 @@
 				BC205D8D28331FDF001A771F /* UpcomingEventsResult.swift */,
 				BC205DA6283325A0001A771F /* LatestEvent.swift */,
 				BC205DA828332606001A771F /* LatestEventsResult.swift */,
+				BC205DBB28332FA8001A771F /* Team.swift */,
+				BC205DBE28332FC4001A771F /* TeamsResult.swift */,
+				BC205DC928334530001A771F /* EventsResult.swift */,
+				BC205DCB28334542001A771F /* Event.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -384,6 +421,7 @@
 			children = (
 				25F03E41282DB71F00EED044 /* LeaguesNetworkManager.swift */,
 				25FD8C2D2830127300A46361 /* TeamNetworkManager.swift */,
+				BC205DC7283344DC001A771F /* EventsNetworkManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -414,6 +452,7 @@
 		BC06E07528331B110051EC28 /* LeagueDetails */ = {
 			isa = PBXGroup;
 			children = (
+				BC205DCD283345F5001A771F /* Presenter */,
 				BC06E07728331B280051EC28 /* TableViewCell */,
 				BC06E07628331B210051EC28 /* View */,
 			);
@@ -536,8 +575,65 @@
 		BC205DAA283326B9001A771F /* Teams */ = {
 			isa = PBXGroup;
 			children = (
+				BC205DAE28332B0B001A771F /* Interactor */,
+				BC205DAD28332B06001A771F /* Presenter */,
+				BC205DAC28332B00001A771F /* CollectionViewCell */,
+				BC205DAB28332AF9001A771F /* View */,
 			);
 			path = Teams;
+			sourceTree = "<group>";
+		};
+		BC205DAB28332AF9001A771F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC205DAF28332BB9001A771F /* TeamsTableViewCell.swift */,
+				BC205DB328332E67001A771F /* TeamsTableViewCellExtension+CollectionView.swift */,
+				BC205DB528332E79001A771F /* TeamsTableViewCellExtension+PresenterDelegate.swift */,
+				BC205DB028332BB9001A771F /* TeamsTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC205DAC28332B00001A771F /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC205DB728332EFE001A771F /* TeamsCollectionViewCell.swift */,
+				BC205DB828332EFE001A771F /* TeamsCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		BC205DAD28332B06001A771F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BC205DC0283330AB001A771F /* TeamsVCPresenter.swift */,
+				BC205DD028334860001A771F /* TeamsPresetnerProtocols.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BC205DAE28332B0B001A771F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				BC205DC2283330F8001A771F /* TeamsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		BC205DC428334142001A771F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BC205DC52833414B001A771F /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BC205DCD283345F5001A771F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BC205DCE28334602001A771F /* LeagueDetailsPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -651,12 +747,14 @@
 			files = (
 				25FF167328304EA300706D24 /* LeaguesTableViewCell.xib in Resources */,
 				BC205D992833232B001A771F /* LatestResultsTableViewCell.xib in Resources */,
+				BC205DBA28332EFE001A771F /* TeamsCollectionViewCell.xib in Resources */,
 				BC205DA128332418001A771F /* LatestResultsCollectionViewCell.xib in Resources */,
 				25FD8C1628300CCF00A46361 /* HomeCollectionViewCell.xib in Resources */,
 				25DFB87B282BEC6C00BE87A6 /* LaunchScreen.storyboard in Resources */,
 				25DFB878282BEC6C00BE87A6 /* Assets.xcassets in Resources */,
 				BC205D8028331DB0001A771F /* UpcomingEventsTableViewCell.xib in Resources */,
 				BC205D8628331ECF001A771F /* UpcomingEventsCollectionViewCell.xib in Resources */,
+				BC205DB228332BB9001A771F /* TeamsTableViewCell.xib in Resources */,
 				25DFB873282BEC5D00BE87A6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -789,24 +887,31 @@
 				2502C6222830669D0092D69C /* TeamViewController.swift in Sources */,
 				25FD8C2228300D3F00A46361 /* HomeViewControllerExtension+CollectionView.swift in Sources */,
 				BC205D8528331ECF001A771F /* UpcomingEventsCollectionViewCell.swift in Sources */,
+				BC205DCF28334602001A771F /* LeagueDetailsPresenter.swift in Sources */,
 				BC205DA028332418001A771F /* LatestResultsCollectionViewCell.swift in Sources */,
 				BC205D7628331C32001A771F /* LeagueDetailsViewControllerExtension+TableView.swift in Sources */,
 				25FF167728304EDC00706D24 /* Sport.swift in Sources */,
 				BC205D982833232B001A771F /* LatestResultsTableViewCell.swift in Sources */,
 				BC205D9D2833236C001A771F /* LatestResultsTableViewCellExtension+PresenterDelegate.swift in Sources */,
+				BC205DB928332EFE001A771F /* TeamsCollectionViewCell.swift in Sources */,
 				BC205D7428331C08001A771F /* LeagueDetailsViewController.swift in Sources */,
 				25FD8C342830441A00A46361 /* TeamsPresenter.swift in Sources */,
 				25FD8C2E2830127300A46361 /* TeamNetworkManager.swift in Sources */,
 				BC205D8A28331FAC001A771F /* UpcomingEventsInteractor.swift in Sources */,
 				25DFB870282BEC5D00BE87A6 /* ViewController.swift in Sources */,
+				BC205DC3283330F8001A771F /* TeamsInteractor.swift in Sources */,
 				BC205D8E28331FDF001A771F /* UpcomingEventsResult.swift in Sources */,
 				25FF167828304EDC00706D24 /* SportsResult.swift in Sources */,
 				25DFB876282BEC5D00BE87A6 /* SportApplication.xcdatamodeld in Sources */,
 				25DFB86C282BEC5D00BE87A6 /* AppDelegate.swift in Sources */,
+				BC205DBF28332FC4001A771F /* TeamsResult.swift in Sources */,
 				BC205D8828331F69001A771F /* UpcomingEventsPresenter.swift in Sources */,
 				BC205D8C28331FCC001A771F /* UpcomingEvents.swift in Sources */,
+				BC205DCC28334542001A771F /* Event.swift in Sources */,
 				BC205DA528332588001A771F /* LatestResultsInteractor.swift in Sources */,
 				BC205DA328332548001A771F /* LatestResultsPresenter.swift in Sources */,
+				BC205DC62833414B001A771F /* Constants.swift in Sources */,
+				BC205DB628332E79001A771F /* TeamsTableViewCellExtension+PresenterDelegate.swift in Sources */,
 				25FF166E28304E8100706D24 /* LeaguesPresenter.swift in Sources */,
 				25FD8C1928300CFB00A46361 /* HomeInteractor.swift in Sources */,
 				25FD8C2128300D3F00A46361 /* HomeViewControllerExtension+PresenterDelegate.swift in Sources */,
@@ -815,15 +920,22 @@
 				25F03E45282DB76600EED044 /* LeaguesModel.swift in Sources */,
 				BC205D8228331E86001A771F /* UpcomingEventsTableViewCellExtension+CollectionView.swift in Sources */,
 				25FD8C1528300CCF00A46361 /* HomeCollectionViewCell.swift in Sources */,
+				BC205DC1283330AB001A771F /* TeamsVCPresenter.swift in Sources */,
 				25FD8C2328300D3F00A46361 /* HomeViewController.swift in Sources */,
 				25DFB86E282BEC5D00BE87A6 /* SceneDelegate.swift in Sources */,
+				BC205DB128332BB9001A771F /* TeamsTableViewCell.swift in Sources */,
 				BC205DA7283325A0001A771F /* LatestEvent.swift in Sources */,
+				BC205DB428332E67001A771F /* TeamsTableViewCellExtension+CollectionView.swift in Sources */,
 				25FD8C2A283011F400A46361 /* TeamModel.swift in Sources */,
 				25FF829C282E76D3006EEDEA /* LeaguesResult.swift in Sources */,
 				BC205D7F28331DB0001A771F /* UpcomingEventsTableViewCell.swift in Sources */,
 				BC205D902833200E001A771F /* UpcomingEventsTableViewCell+PresenterDelegate.swift in Sources */,
 				25F03E42282DB71F00EED044 /* LeaguesNetworkManager.swift in Sources */,
+				BC205DBC28332FA8001A771F /* Team.swift in Sources */,
+				BC205DD128334860001A771F /* TeamsPresetnerProtocols.swift in Sources */,
 				25FF167428304EA300706D24 /* LeaguesViewController.swift in Sources */,
+				BC205DC8283344DC001A771F /* EventsNetworkManager.swift in Sources */,
+				BC205DCA28334530001A771F /* EventsResult.swift in Sources */,
 				25FF167228304EA300706D24 /* LeaguesTableViewCell.swift in Sources */,
 				BC205D9B28332354001A771F /* LatestResultsTableViewCellExtension+CollectionView.swift in Sources */,
 			);

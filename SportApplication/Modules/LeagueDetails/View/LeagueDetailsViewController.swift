@@ -11,6 +11,8 @@ import UIKit
 class LeagueDetailsViewController: UIViewController {
 
     @IBOutlet weak var eventsTableView: UITableView!
+    var leagueId: String?
+    var leagueName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()

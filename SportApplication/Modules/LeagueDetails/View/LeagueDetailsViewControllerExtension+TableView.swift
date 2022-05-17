@@ -17,7 +17,10 @@ extension LeagueDetailsViewController: UITableViewDataSource, UITableViewDelegat
         eventsTableView.dataSource = self
         
         eventsTableView.register(UpcomingEventsTableViewCell.nib(), forCellReuseIdentifier: UpcomingEventsTableViewCell.identifier)
+        
         eventsTableView.register(LatestResultsTableViewCell.nib(), forCellReuseIdentifier: LatestResultsTableViewCell.identifier)
+        
+        eventsTableView.register(TeamsTableViewCell.nib(), forCellReuseIdentifier: TeamsTableViewCell.identifier)
         
     }
     
@@ -34,25 +37,34 @@ extension LeagueDetailsViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         let upcomingEventsCell = tableView.dequeueReusableCell(withIdentifier: UpcomingEventsTableViewCell.identifier) as! UpcomingEventsTableViewCell
         
         let latestResultsCell = tableView.dequeueReusableCell(withIdentifier: LatestResultsTableViewCell.identifier) as! LatestResultsTableViewCell
         
+        let teamsCell = tableView.dequeueReusableCell(withIdentifier: TeamsTableViewCell.identifier) as! TeamsTableViewCell
+        
+        
+//        upcomingEventsCell.setLeagueId(leagueId: "4617")
+//        latestResultsCell.setLeagueId(leagueId: "4617")
+//        teamsCell.setLeagueName(leagueName: "Albanian%20Superliga")
+        
+        upcomingEventsCell.setLeagueId(leagueId: leagueId ?? "4406")
+        latestResultsCell.setLeagueId(leagueId: leagueId ?? "4617")
+        let leagueNameWithPercentEncdoing = leagueName?.replacingOccurrences(of: " ", with: "%20")
+        teamsCell.setLeagueName(leagueName: leagueNameWithPercentEncdoing ?? "Albanian%20Superliga")
+        //4406
         
         switch indexPath.row {
         case 0:
             return upcomingEventsCell
         case 1:
             return latestResultsCell
-//        case 2:
-//            return latestResultsCell
+        case 2:
+            return teamsCell
         default:
             return upcomingEventsCell
         }
         
-    
-//        return latestResultsCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

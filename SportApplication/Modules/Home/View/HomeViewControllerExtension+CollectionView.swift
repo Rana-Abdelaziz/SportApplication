@@ -25,10 +25,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     // delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        print("collection cell tapped!")
+        
         
         let leaguesViewController = storyboard?.instantiateViewController(withIdentifier: "LeaguesTableViewController") as! LeaguesViewController
-        //leaguesViewController.sportName = ""
+        
+        let sportName = homePresenter.getSportNameAtIndex(index: indexPath.row)
+        leaguesViewController.sportName = sportName
+        
+        print("collection cell tapped! \(sportName)")
         leaguesViewController.flag = "all"
         self.navigationController?.pushViewController(leaguesViewController, animated: true)
     }

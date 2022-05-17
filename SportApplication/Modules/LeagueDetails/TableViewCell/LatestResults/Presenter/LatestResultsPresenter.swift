@@ -32,20 +32,23 @@ protocol LatestResultsCellView {
 class LatestResultsPresenter {
     
     private weak var view: LatestResultsView?
-    private let interactor = LatestResultsInteractor(baseUrl: "https://www.thesportsdb.com/api/v1/json/2/")
+    private let interactor = LatestResultsInteractor(baseUrl: Constants.BASE_URL)
     private var latestResults = [LatestEvent]()
+    
+//    private var 
     
     init(view: LatestResultsView) {
         self.view = view
     }
+//    
+//    func viewDidLoad() {
+//        getLatestResults()
+//    }
     
-    func viewDidLoad() {
-        getLatestResults()
-    }
-    
-    func getLatestResults(){
+    func getLatestResults(leagueId: String) {
+        
         view?.showIndicator()
-        interactor.getLatestResults(endPoint: "eventsseason.php?id=4617", completionHandler: { [weak self] latestResults, error in
+        interactor.getLatestResults(endPoint: Constants.END_POINT_EVENTS + leagueId, completionHandler: { [weak self] latestResults, error in
 
             guard let self = self else { return }
             self.view?.hideIndicator()
@@ -64,11 +67,6 @@ class LatestResultsPresenter {
     func getLatestResultsCount() -> Int {
         return latestResults.count
     }
-    
-//    func configure(cell: LatestResultCollectionViewCell, for index: Int) {
-//        let latestResult = latestResults[index]
-//        cell.displayEventImage(strSportThumb: latestResult.strThumb ?? "")
-//    }
     
     func configure(cell: LatestResultsCollectionViewCell, for index: Int) {
         let latestResult = latestResults[index]

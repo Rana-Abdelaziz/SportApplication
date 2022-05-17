@@ -20,7 +20,8 @@ class UpcomingEventsTableViewCell: UITableViewCell, UpcomingEventsView {
         
         setupCollectionView()
         upcomingEventsPresenter = UpcomingEventsPresenter(view: self)
-        upcomingEventsPresenter.viewDidLoad()
+        
+//        upcomingEventsPresenter.viewDidLoad(leagueId: leagueId)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,6 +32,10 @@ class UpcomingEventsTableViewCell: UITableViewCell, UpcomingEventsView {
     
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
+    }
+    
+    func setLeagueId(leagueId: String) {
+        upcomingEventsPresenter.getUpcomingEvents(leagueId: leagueId)
     }
     
 }
