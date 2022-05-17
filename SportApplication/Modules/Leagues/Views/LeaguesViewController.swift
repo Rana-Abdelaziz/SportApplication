@@ -48,6 +48,16 @@ class LeaguesViewController: UIViewController , UITableViewDelegate , UITableVie
       }
       
       
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      //  let leagueDetailsViewController = LeagueDetailsViewController()
+        let leagueDetailsViewController = storyboard?.instantiateViewController(withIdentifier: "LeaguesDetailsViewController") as! LeagueDetailsViewController
+        leagueDetailsViewController.leagueId = leaguesList[indexPath.row].idLeague
+        leagueDetailsViewController.leagueName = leaguesList[indexPath.row].strLeague
+        self.navigationController?.pushViewController(leagueDetailsViewController, animated: true)
+        
+        //tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "LeaguesTableViewCell", for: indexPath) as! LeaguesTableViewCell
         cell.title.text = leaguesList[indexPath.section].strLeague

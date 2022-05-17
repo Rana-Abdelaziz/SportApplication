@@ -13,6 +13,7 @@ class TeamViewController: UIViewController {
     let presnter :TeamsPresnterProtocol = TeamPresenter()
     var team = TeamModel()
     
+    
     @IBOutlet weak var teamTshirtImg: UIImageView!
     @IBOutlet weak var backgroundImg: UIImageView!
     @IBOutlet weak var teamImg: UIImageView!
@@ -20,18 +21,8 @@ class TeamViewController: UIViewController {
     @IBOutlet weak var countryName: UILabel!
     @IBOutlet weak var stadiumName: UILabel!
     @IBOutlet weak var leagueName: UILabel!
-    @IBAction func instagramBtn(_ sender: Any) {
-        
-    }
-    @IBAction func websiteBtn(_ sender: Any) {
-        
-    }
-    @IBAction func twitterBtn(_ sender: Any) {
-        
-    }
-    @IBAction func faceBookBtn(_ sender: Any) {
-        
-    }
+    
+ 
     override func viewDidLoad() {
         
         
@@ -58,15 +49,49 @@ class TeamViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+     }
+     @IBAction func instagramBtn(_ sender: Any) {
+         let instagramUrl = NSURL(string:"https://"+team.strInstagram!+"/")
+                 if UIApplication.shared.canOpenURL(instagramUrl! as URL) {
+                     UIApplication.shared.openURL(instagramUrl! as URL)
+                 } else {
+                     UIApplication.shared.openURL(NSURL(string: "https://www.instagram.com/"
+         )! as URL)
+                 }
+     }
+     @IBAction func websiteBtn(_ sender: Any) {
+         let websiteUrl = NSURL(string: "http://"+team.strWebsite!)
+             
+             if UIApplication.shared.canOpenURL(websiteUrl! as URL) {
+                 UIApplication.shared.openURL(websiteUrl! as URL)
+             } else {
+                 UIApplication.shared.openURL(NSURL(string: "http://google.com/")! as URL)
+             }
+         
+     }
+     @IBAction func twitterBtn(_ sender: Any) {
+         let twitterUrl = NSURL(string: "https://"+team.strTwitter!)
+         if UIApplication.shared.canOpenURL(twitterUrl! as URL) {
+             UIApplication.shared.openURL(twitterUrl! as URL)
+         } else {
+             UIApplication.shared.openURL(NSURL(string: "https://twitter.com/")! as URL)
+         }
+         
+     }
+     @IBAction func faceBookBtn(_ sender: Any) {
+         let facebookUrl = NSURL(string: "https://"+team.strFacebook!)
+         if UIApplication.shared.canOpenURL(facebookUrl! as URL) {
+             UIApplication.shared.openURL(facebookUrl! as URL)
+         } else {
+             UIApplication.shared.openURL(NSURL(string: "http://facebook.com/")! as URL)
+         }
+         
+     }
+    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
