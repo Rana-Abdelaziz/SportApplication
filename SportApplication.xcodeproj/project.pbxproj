@@ -80,6 +80,8 @@
 		BC205DCC28334542001A771F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DCB28334542001A771F /* Event.swift */; };
 		BC205DCF28334602001A771F /* LeagueDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DCE28334602001A771F /* LeagueDetailsPresenter.swift */; };
 		BC205DD128334860001A771F /* TeamsPresetnerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DD028334860001A771F /* TeamsPresetnerProtocols.swift */; };
+		BC66900D2835AD87001D016E /* League+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66900B2835AD87001D016E /* League+CoreDataProperties.swift */; };
+		BC66900E2835AD87001D016E /* League+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66900C2835AD87001D016E /* League+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +185,8 @@
 		BC205DCB28334542001A771F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		BC205DCE28334602001A771F /* LeagueDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueDetailsPresenter.swift; sourceTree = "<group>"; };
 		BC205DD028334860001A771F /* TeamsPresetnerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsPresetnerProtocols.swift; sourceTree = "<group>"; };
+		BC66900B2835AD87001D016E /* League+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "League+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BC66900C2835AD87001D016E /* League+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "League+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D33DD23AEB3BDDC4A13A2BBF /* Pods-SportApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportApplication.release.xcconfig"; path = "Target Support Files/Pods-SportApplication/Pods-SportApplication.release.xcconfig"; sourceTree = "<group>"; };
 		D98BE83FAF5E654AC2D3110D /* Pods_SportApplication_SportApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportApplication_SportApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -326,6 +330,7 @@
 		25F03E43282DB74500EED044 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BC66900A2835AD73001D016E /* FavLeague */,
 				25FF829D282E84B6006EEDEA /* Services */,
 				25FF167528304EDC00706D24 /* Sport.swift */,
 				25FF167628304EDC00706D24 /* SportsResult.swift */,
@@ -636,6 +641,15 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		BC66900A2835AD73001D016E /* FavLeague */ = {
+			isa = PBXGroup;
+			children = (
+				BC66900C2835AD87001D016E /* League+CoreDataClass.swift */,
+				BC66900B2835AD87001D016E /* League+CoreDataProperties.swift */,
+			);
+			path = FavLeague;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -901,6 +915,7 @@
 				25FD8C2E2830127300A46361 /* TeamNetworkManager.swift in Sources */,
 				BC205D8A28331FAC001A771F /* UpcomingEventsInteractor.swift in Sources */,
 				25DFB870282BEC5D00BE87A6 /* ViewController.swift in Sources */,
+				BC66900D2835AD87001D016E /* League+CoreDataProperties.swift in Sources */,
 				BC205DC3283330F8001A771F /* TeamsInteractor.swift in Sources */,
 				BC205D8E28331FDF001A771F /* UpcomingEventsResult.swift in Sources */,
 				25FF167828304EDC00706D24 /* SportsResult.swift in Sources */,
@@ -924,6 +939,7 @@
 				25FD8C1528300CCF00A46361 /* HomeCollectionViewCell.swift in Sources */,
 				BC205DC1283330AB001A771F /* TeamsVCPresenter.swift in Sources */,
 				25FD8C2328300D3F00A46361 /* HomeViewController.swift in Sources */,
+				BC66900E2835AD87001D016E /* League+CoreDataClass.swift in Sources */,
 				25DFB86E282BEC5D00BE87A6 /* SceneDelegate.swift in Sources */,
 				BC205DB128332BB9001A771F /* TeamsTableViewCell.swift in Sources */,
 				BC205DA7283325A0001A771F /* LatestEvent.swift in Sources */,
