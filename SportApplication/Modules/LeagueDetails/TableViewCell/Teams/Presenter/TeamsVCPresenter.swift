@@ -44,6 +44,10 @@ class TeamsVCPresenter {
         return teamsResult.count
     }
     
+    func getTeamAtIndex(index: Int) -> TeamModel {
+        return teamsResult[index]
+    }
+    
     func configure(cell: TeamsCollectionViewCell, for index: Int) {
         let team = teamsResult[index]
         cell.displayTeamName(strTeam: team.strTeam ?? "")

@@ -30,7 +30,8 @@ extension TeamsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
-        print("collection cell tapped!")
+        let team = teamsPresenter.getTeamAtIndex(index: indexPath.row)
+        didSelectRow?(team)
         
     }
     

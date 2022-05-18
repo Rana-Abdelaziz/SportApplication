@@ -32,7 +32,7 @@ class TeamViewController: UIViewController {
                 print(Error ?? "Error fetching teams")
                 return
             }
-            self.team = r.teams![0]
+//            self.team = r.teams![0]
             self.teamName.text = self.team.strTeam
             self.countryName.text = self.team.strCountry
             self.stadiumName.text = self.team.strStadium

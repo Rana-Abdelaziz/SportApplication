@@ -14,6 +14,7 @@ class TeamsTableViewCell: UITableViewCell, TeamsView {
     var teamsPresenter: TeamsVCPresenter!
 
     static let identifier = "TeamsTableViewCell"
+    var didSelectRow: ((_ team: TeamModel) -> Void)? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
