@@ -41,8 +41,8 @@ class TeamViewController: UIViewController {
             self.teamImg.clipsToBounds = true
             self.teamImg.kf.setImage(with: URL(string: self.team.strTeamBadge!), placeholder: UIImage(named: "youtube.png"), options: nil, progressBlock: nil, completionHandler: nil)
             
-            self.backgroundImg.kf.setImage(with: URL(string: self.team.strStadiumThumb!), placeholder: UIImage(named: "youtube.png"), options: nil, progressBlock: nil, completionHandler: nil)
-            self.teamTshirtImg.kf.setImage(with: URL(string: self.team.strTeamJersey!), placeholder: UIImage(named: "youtube.png"), options: nil, progressBlock: nil, completionHandler: nil)
+            self.backgroundImg.kf.setImage(with: URL(string: self.team.strStadiumThumb ?? ""), placeholder: UIImage(named: "placeholder.jpeg"), options: nil, progressBlock: nil, completionHandler: nil)
+            self.teamTshirtImg.kf.setImage(with: URL(string: self.team.strTeamJersey ?? ""), placeholder: UIImage(named: "placeholder.jpeg"), options: nil, progressBlock: nil, completionHandler: nil)
             print(r.teams)
             
         }
