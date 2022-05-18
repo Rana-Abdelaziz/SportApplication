@@ -54,6 +54,14 @@ extension LeagueDetailsViewController: UITableViewDataSource, UITableViewDelegat
         teamsCell.setLeagueName(leagueName: leagueNameWithPercentEncdoing ?? "Albanian%20Superliga")
         //4406
         
+        teamsCell.didSelectRow = { [weak self] team in
+            
+            let teamDetailsVC = self?.storyboard?.instantiateViewController(withIdentifier: "TeamDetailsViewController") as! TeamViewController
+            teamDetailsVC.team = team
+            self?.navigationController?.present(teamDetailsVC, animated: true)
+            
+        }
+        
         switch indexPath.row {
         case 0:
             return upcomingEventsCell
