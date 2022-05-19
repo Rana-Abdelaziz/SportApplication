@@ -51,8 +51,6 @@
 		BC205D8628331ECF001A771F /* UpcomingEventsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC205D8428331ECF001A771F /* UpcomingEventsCollectionViewCell.xib */; };
 		BC205D8828331F69001A771F /* UpcomingEventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205D8728331F69001A771F /* UpcomingEventsPresenter.swift */; };
 		BC205D8A28331FAC001A771F /* UpcomingEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205D8928331FAC001A771F /* UpcomingEventsInteractor.swift */; };
-		BC205D8C28331FCC001A771F /* UpcomingEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205D8B28331FCC001A771F /* UpcomingEvents.swift */; };
-		BC205D8E28331FDF001A771F /* UpcomingEventsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205D8D28331FDF001A771F /* UpcomingEventsResult.swift */; };
 		BC205D902833200E001A771F /* UpcomingEventsTableViewCell+PresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205D8F2833200E001A771F /* UpcomingEventsTableViewCell+PresenterDelegate.swift */; };
 		BC205D982833232B001A771F /* LatestResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205D962833232B001A771F /* LatestResultsTableViewCell.swift */; };
 		BC205D992833232B001A771F /* LatestResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC205D972833232B001A771F /* LatestResultsTableViewCell.xib */; };
@@ -62,8 +60,6 @@
 		BC205DA128332418001A771F /* LatestResultsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC205D9F28332418001A771F /* LatestResultsCollectionViewCell.xib */; };
 		BC205DA328332548001A771F /* LatestResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DA228332548001A771F /* LatestResultsPresenter.swift */; };
 		BC205DA528332588001A771F /* LatestResultsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DA428332588001A771F /* LatestResultsInteractor.swift */; };
-		BC205DA7283325A0001A771F /* LatestEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DA6283325A0001A771F /* LatestEvent.swift */; };
-		BC205DA928332606001A771F /* LatestEventsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DA828332606001A771F /* LatestEventsResult.swift */; };
 		BC205DB128332BB9001A771F /* TeamsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DAF28332BB9001A771F /* TeamsTableViewCell.swift */; };
 		BC205DB228332BB9001A771F /* TeamsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC205DB028332BB9001A771F /* TeamsTableViewCell.xib */; };
 		BC205DB428332E67001A771F /* TeamsTableViewCellExtension+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DB328332E67001A771F /* TeamsTableViewCellExtension+CollectionView.swift */; };
@@ -156,8 +152,6 @@
 		BC205D8428331ECF001A771F /* UpcomingEventsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingEventsCollectionViewCell.xib; sourceTree = "<group>"; };
 		BC205D8728331F69001A771F /* UpcomingEventsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingEventsPresenter.swift; sourceTree = "<group>"; };
 		BC205D8928331FAC001A771F /* UpcomingEventsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingEventsInteractor.swift; sourceTree = "<group>"; };
-		BC205D8B28331FCC001A771F /* UpcomingEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingEvents.swift; sourceTree = "<group>"; };
-		BC205D8D28331FDF001A771F /* UpcomingEventsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingEventsResult.swift; sourceTree = "<group>"; };
 		BC205D8F2833200E001A771F /* UpcomingEventsTableViewCell+PresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpcomingEventsTableViewCell+PresenterDelegate.swift"; sourceTree = "<group>"; };
 		BC205D962833232B001A771F /* LatestResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestResultsTableViewCell.swift; sourceTree = "<group>"; };
 		BC205D972833232B001A771F /* LatestResultsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LatestResultsTableViewCell.xib; sourceTree = "<group>"; };
@@ -167,8 +161,6 @@
 		BC205D9F28332418001A771F /* LatestResultsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LatestResultsCollectionViewCell.xib; sourceTree = "<group>"; };
 		BC205DA228332548001A771F /* LatestResultsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestResultsPresenter.swift; sourceTree = "<group>"; };
 		BC205DA428332588001A771F /* LatestResultsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestResultsInteractor.swift; sourceTree = "<group>"; };
-		BC205DA6283325A0001A771F /* LatestEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestEvent.swift; sourceTree = "<group>"; };
-		BC205DA828332606001A771F /* LatestEventsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestEventsResult.swift; sourceTree = "<group>"; };
 		BC205DAF28332BB9001A771F /* TeamsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTableViewCell.swift; sourceTree = "<group>"; };
 		BC205DB028332BB9001A771F /* TeamsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamsTableViewCell.xib; sourceTree = "<group>"; };
 		BC205DB328332E67001A771F /* TeamsTableViewCellExtension+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamsTableViewCellExtension+CollectionView.swift"; sourceTree = "<group>"; };
@@ -338,10 +330,6 @@
 				25F03E44282DB76600EED044 /* LeaguesModel.swift */,
 				25FF829B282E76D3006EEDEA /* LeaguesResult.swift */,
 				25FD8C29283011F400A46361 /* TeamModel.swift */,
-				BC205D8B28331FCC001A771F /* UpcomingEvents.swift */,
-				BC205D8D28331FDF001A771F /* UpcomingEventsResult.swift */,
-				BC205DA6283325A0001A771F /* LatestEvent.swift */,
-				BC205DA828332606001A771F /* LatestEventsResult.swift */,
 				BC205DBB28332FA8001A771F /* Team.swift */,
 				BC205DBE28332FC4001A771F /* TeamsResult.swift */,
 				BC205DC928334530001A771F /* EventsResult.swift */,
@@ -917,13 +905,11 @@
 				25DFB870282BEC5D00BE87A6 /* ViewController.swift in Sources */,
 				BC66900D2835AD87001D016E /* League+CoreDataProperties.swift in Sources */,
 				BC205DC3283330F8001A771F /* TeamsInteractor.swift in Sources */,
-				BC205D8E28331FDF001A771F /* UpcomingEventsResult.swift in Sources */,
 				25FF167828304EDC00706D24 /* SportsResult.swift in Sources */,
 				25DFB876282BEC5D00BE87A6 /* SportApplication.xcdatamodeld in Sources */,
 				25DFB86C282BEC5D00BE87A6 /* AppDelegate.swift in Sources */,
 				BC205DBF28332FC4001A771F /* TeamsResult.swift in Sources */,
 				BC205D8828331F69001A771F /* UpcomingEventsPresenter.swift in Sources */,
-				BC205D8C28331FCC001A771F /* UpcomingEvents.swift in Sources */,
 				BC205DCC28334542001A771F /* Event.swift in Sources */,
 				BC205DA528332588001A771F /* LatestResultsInteractor.swift in Sources */,
 				BC205DA328332548001A771F /* LatestResultsPresenter.swift in Sources */,
@@ -932,7 +918,6 @@
 				25FF166E28304E8100706D24 /* LeaguesPresenter.swift in Sources */,
 				25FD8C1928300CFB00A46361 /* HomeInteractor.swift in Sources */,
 				25FD8C2128300D3F00A46361 /* HomeViewControllerExtension+PresenterDelegate.swift in Sources */,
-				BC205DA928332606001A771F /* LatestEventsResult.swift in Sources */,
 				25FD8C3028302CFC00A46361 /* TeamsResualt.swift in Sources */,
 				25F03E45282DB76600EED044 /* LeaguesModel.swift in Sources */,
 				BC205D8228331E86001A771F /* UpcomingEventsTableViewCellExtension+CollectionView.swift in Sources */,
@@ -942,7 +927,6 @@
 				BC66900E2835AD87001D016E /* League+CoreDataClass.swift in Sources */,
 				25DFB86E282BEC5D00BE87A6 /* SceneDelegate.swift in Sources */,
 				BC205DB128332BB9001A771F /* TeamsTableViewCell.swift in Sources */,
-				BC205DA7283325A0001A771F /* LatestEvent.swift in Sources */,
 				BC205DB428332E67001A771F /* TeamsTableViewCellExtension+CollectionView.swift in Sources */,
 				25FD8C2A283011F400A46361 /* TeamModel.swift in Sources */,
 				25FF829C282E76D3006EEDEA /* LeaguesResult.swift in Sources */,

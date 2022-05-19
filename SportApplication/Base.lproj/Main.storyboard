@@ -100,7 +100,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gTh-Yn-Wq5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="120" width="414" height="742"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UpcomingEventsTableViewCell" id="xwr-9l-KlR">
@@ -129,14 +129,48 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5VQ-Iz-wOv">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QF0-3y-Txm">
+                                        <rect key="frame" x="16" y="16" width="56" height="88"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                        <connections>
+                                            <action selector="actionBack:" destination="O6W-aF-kC2" eventType="touchUpInside" id="f47-d0-lwF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xX5-Bm-KDx">
+                                        <rect key="frame" x="335" y="16" width="63" height="88"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Add +"/>
+                                        <connections>
+                                            <action selector="actionAddRemoveFav:" destination="O6W-aF-kC2" eventType="touchUpInside" id="ZXs-sC-Idb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="xX5-Bm-KDx" firstAttribute="top" secondItem="5VQ-Iz-wOv" secondAttribute="top" constant="16" id="JZE-3u-rIs"/>
+                                    <constraint firstItem="QF0-3y-Txm" firstAttribute="top" secondItem="5VQ-Iz-wOv" secondAttribute="top" constant="16" id="Jh1-vA-l1A"/>
+                                    <constraint firstAttribute="bottom" secondItem="QF0-3y-Txm" secondAttribute="bottom" constant="16" id="ZaO-ii-VJz"/>
+                                    <constraint firstAttribute="bottom" secondItem="xX5-Bm-KDx" secondAttribute="bottom" constant="16" id="cDb-CF-s5i"/>
+                                    <constraint firstAttribute="trailing" secondItem="xX5-Bm-KDx" secondAttribute="trailing" constant="16" id="dEL-oN-YzV"/>
+                                    <constraint firstAttribute="height" constant="120" id="jd4-qZ-GtD"/>
+                                    <constraint firstItem="QF0-3y-Txm" firstAttribute="leading" secondItem="5VQ-Iz-wOv" secondAttribute="leading" constant="16" id="oJO-Qy-HCe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="up5-K4-12f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gTh-Yn-Wq5" firstAttribute="top" secondItem="up5-K4-12f" secondAttribute="top" id="67d-Tj-fbE"/>
-                            <constraint firstItem="gTh-Yn-Wq5" firstAttribute="bottom" secondItem="up5-K4-12f" secondAttribute="bottom" id="RbA-N6-8iS"/>
-                            <constraint firstItem="gTh-Yn-Wq5" firstAttribute="trailing" secondItem="up5-K4-12f" secondAttribute="trailing" id="ZvR-PS-z0e"/>
-                            <constraint firstItem="gTh-Yn-Wq5" firstAttribute="leading" secondItem="up5-K4-12f" secondAttribute="leading" id="gsl-qN-88o"/>
+                            <constraint firstItem="5VQ-Iz-wOv" firstAttribute="leading" secondItem="up5-K4-12f" secondAttribute="leading" id="1BL-Y6-EE1"/>
+                            <constraint firstItem="gTh-Yn-Wq5" firstAttribute="top" secondItem="5VQ-Iz-wOv" secondAttribute="bottom" id="30o-u4-P8R"/>
+                            <constraint firstItem="5VQ-Iz-wOv" firstAttribute="top" secondItem="nDZ-Ow-j0U" secondAttribute="top" id="6BE-n8-lLT"/>
+                            <constraint firstItem="up5-K4-12f" firstAttribute="trailing" secondItem="5VQ-Iz-wOv" secondAttribute="trailing" id="LmG-on-sRM"/>
+                            <constraint firstItem="gTh-Yn-Wq5" firstAttribute="trailing" secondItem="up5-K4-12f" secondAttribute="trailing" id="VyR-Bn-AmI"/>
+                            <constraint firstItem="gTh-Yn-Wq5" firstAttribute="leading" secondItem="up5-K4-12f" secondAttribute="leading" id="lsZ-JU-8BZ"/>
+                            <constraint firstItem="gTh-Yn-Wq5" firstAttribute="bottom" secondItem="up5-K4-12f" secondAttribute="bottom" id="zHj-Ms-0YY"/>
                         </constraints>
                     </view>
                     <connections>

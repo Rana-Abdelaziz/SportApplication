@@ -58,7 +58,8 @@ extension LeagueDetailsViewController: UITableViewDataSource, UITableViewDelegat
             
             let teamDetailsVC = self?.storyboard?.instantiateViewController(withIdentifier: "TeamDetailsViewController") as! TeamViewController
             teamDetailsVC.team = team
-            self?.navigationController?.present(teamDetailsVC, animated: true)
+//            self?.navigationController?.present(teamDetailsVC, animated: true)
+            self?.navigationController?.pushViewController(teamDetailsVC, animated: true)
             
         }
         

@@ -35,7 +35,7 @@ extension LeaguesViewController : UITableViewDelegate , UITableViewDataSource {
             leagueDetailsViewController.leagueBadge = leaguesList[indexPath.section].strBadge
             leagueDetailsViewController.leagueYoutubeLink = leaguesList[indexPath.section].strYoutube
             
-//            self.navigationController?.present(leagueDetailsViewController, animated: true)
+//            self.present(leagueDetailsViewController, animated: true, completion: nil)
             self.navigationController?.pushViewController(leagueDetailsViewController, animated: true)
             
         }

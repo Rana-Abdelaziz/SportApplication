@@ -20,22 +20,12 @@ protocol LatestResultsCellView {
     func displayAwayTeam(strAwayTeam: String)
 }
 
-//protocol LatestResultsCellView {
-//    func displayName(strHomeTeam: String)
-////    func displayAwayTeam(strAwayTeam: String)
-//}
-
-//protocol LatestResultsCellView {
-//    func displayImage(strThumb: String)
-//}
 
 class LatestResultsPresenter {
     
     private weak var view: LatestResultsView?
     private let interactor = LatestResultsInteractor(baseUrl: Constants.BASE_URL)
-    private var latestResults = [LatestEvent]()
-    
-//    private var 
+    private var latestResults = [Event]()
     
     init(view: LatestResultsView) {
         self.view = view
