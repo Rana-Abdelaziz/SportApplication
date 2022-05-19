@@ -32,6 +32,10 @@ extension LeaguesViewController : UITableViewDelegate , UITableViewDataSource {
             let leagueDetailsViewController = storyboard?.instantiateViewController(withIdentifier: "LeaguesDetailsViewController") as! LeagueDetailsViewController
             leagueDetailsViewController.leagueId = leaguesList[indexPath.section].idLeague
             leagueDetailsViewController.leagueName = leaguesList[indexPath.section].strLeague
+            leagueDetailsViewController.leagueBadge = leaguesList[indexPath.section].strBadge
+            leagueDetailsViewController.leagueYoutubeLink = leaguesList[indexPath.section].strYoutube
+            
+//            self.navigationController?.present(leagueDetailsViewController, animated: true)
             self.navigationController?.pushViewController(leagueDetailsViewController, animated: true)
             
         }
