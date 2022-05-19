@@ -34,6 +34,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         print("collection cell tapped! \(sportName)")
         leaguesViewController.flag = "all"
+
+        //leaguesViewController.flag = "favorite"
         self.navigationController?.pushViewController(leaguesViewController, animated: true)
     }
     

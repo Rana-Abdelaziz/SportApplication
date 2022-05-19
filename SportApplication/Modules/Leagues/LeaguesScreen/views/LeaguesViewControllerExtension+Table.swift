@@ -65,7 +65,6 @@ extension LeaguesViewController : UITableViewDelegate , UITableViewDataSource {
             
         }
     
-        ///////update from here//////////
           func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            let cell = tableView.dequeueReusableCell(withIdentifier: "LeaguesTableViewCell", for: indexPath) as! LeaguesTableViewCell
             
@@ -113,6 +112,53 @@ extension LeaguesViewController : UITableViewDelegate , UITableViewDataSource {
           func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
               return 10
           }
+    
+        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+             if editingStyle == .delete {
+                if flag == "favorite"{
+                    print("deleting \(leagues[indexPath.section].leagueName)")
+                     
+                                         context.delete(leagues[indexPath.section])
+                     
+                                         do {
+                                             try context.save()
+                                             leagues.remove(at: indexPath.section)
+                                         } catch {
+                                             print("Error deleting todo")
+                                         }
+                     
+                                         DispatchQueue.main.async {
+                                            tableView.deleteSections([indexPath.section], with: .fade)
+                                         }
+//
+                                     }
+                }
+             
+        }
+    
+    
+
+    
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//
+//            print("deleting \(todos![indexPath.row].name)")
+//
+//            viewContext.delete(todos![indexPath.row])
+//
+//            do {
+//                try viewContext.save()
+//                todos?.remove(at: indexPath.row)
+//            } catch {
+//                print("Error deleting todo")
+//            }
+//
+//            DispatchQueue.main.async {
+//                tableView.deleteRows(at: [indexPath], with: .fade)
+//            }
+//
+//        }
+//    }
     
     
 //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
