@@ -21,7 +21,16 @@ extension LeaguesViewController : UITableViewDelegate , UITableViewDataSource {
     
          
         func numberOfSections(in tableView: UITableView) -> Int {
-             return leaguesList.count
+            switch flag {
+            case "all":
+                return leaguesList.count
+            case "favorite":
+                return leagues.count
+            default:
+                return leaguesList.count
+
+            }
+             
         }
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return 1
@@ -30,39 +39,72 @@ extension LeaguesViewController : UITableViewDelegate , UITableViewDataSource {
           
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let leagueDetailsViewController = storyboard?.instantiateViewController(withIdentifier: "LeaguesDetailsViewController") as! LeagueDetailsViewController
+           switch flag {
+                     case "all":
+                        leagueDetailsViewController.leagueId = leaguesList[indexPath.section].idLeague
+                                   leagueDetailsViewController.leagueName = leaguesList[indexPath.section].strLeague
+                                   leagueDetailsViewController.leagueBadge = leaguesList[indexPath.section].strBadge
+                                   leagueDetailsViewController.leagueYoutubeLink = leaguesList[indexPath.section].strYoutube
+                        
+           case "favorite":
             leagueDetailsViewController.leagueId = leaguesList[indexPath.section].idLeague
-            leagueDetailsViewController.leagueName = leaguesList[indexPath.section].strLeague
-            leagueDetailsViewController.leagueBadge = leaguesList[indexPath.section].strBadge
-            leagueDetailsViewController.leagueYoutubeLink = leaguesList[indexPath.section].strYoutube
+            leagueDetailsViewController.leagueName = leagues[indexPath.section].leagueName
+            leagueDetailsViewController.leagueBadge = leagues[indexPath.section].leagueBadge
+                                              leagueDetailsViewController.leagueYoutubeLink = leagues[indexPath.section].leagueYoutubeLink
+                     default:
+                        
+                        leagueDetailsViewController.leagueId = leaguesList[indexPath.section].idLeague
+                        leagueDetailsViewController.leagueName = leaguesList[indexPath.section].strLeague
+                        leagueDetailsViewController.leagueBadge = leaguesList[indexPath.section].strBadge
+                        leagueDetailsViewController.leagueYoutubeLink = leaguesList[indexPath.section].strYoutube
+                     }
+           
             
 //            self.navigationController?.present(leagueDetailsViewController, animated: true)
             self.navigationController?.pushViewController(leagueDetailsViewController, animated: true)
             
         }
-        
+    
+        ///////update from here//////////
           func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            let cell = tableView.dequeueReusableCell(withIdentifier: "LeaguesTableViewCell", for: indexPath) as! LeaguesTableViewCell
             
             //check flag at first
-            cell.title.text = leaguesList[indexPath.section].strLeague
-            cell.layer.cornerRadius = 15
-
-            if leaguesList[indexPath.section].strYoutube == ""{
-                
-    //            cell.youtubeImage.isUserInteractionEnabled = false
-    //            let blur = UIVisualEffectView(effect: UIBlurEffect(style:
-    //                        UIBlurEffect.Style.light))
-    //            blur.frame = cell.youtubeImage.bounds
-    //            blur.isUserInteractionEnabled = false //This allows touches to forward to the button.
-    //            cell.youtubeImage.insertSubview(blur, at: 0)
-
-                
-            }else{
-                cell.youtubeLink = leaguesList[indexPath.section].strYoutube ?? ""
-            }
             
-           let url = leaguesList[indexPath.section].strBadge
-            cell.logoImage.kf.setImage(with: URL(string: url!), placeholder: UIImage(named: "youtube.png"), options: nil, progressBlock: nil, completionHandler: nil)
+            switch flag {
+                   case "all":
+                cell.title.text = leaguesList[indexPath.section].strLeague
+                        cell.layer.cornerRadius = 15
+                        if leaguesList[indexPath.section].strYoutube == ""{
+                        }else{
+                            cell.youtubeLink = leaguesList[indexPath.section].strYoutube ?? ""
+                        }
+                        
+                       let url = leaguesList[indexPath.section].strBadge
+                       cell.logoImage.kf.setImage(with: URL(string: url!), placeholder: UIImage(named: "youtube.png"), options: nil, progressBlock: nil, completionHandler: nil)
+                   case "favorite":
+                    cell.title.text = leagues[indexPath.section].leagueName
+                        cell.layer.cornerRadius = 15
+                        if leagues[indexPath.section].leagueYoutubeLink == ""{
+                        }else{
+                            cell.youtubeLink = leagues[indexPath.section].leagueYoutubeLink ?? ""
+                        }
+                        
+                       let url = leagues[indexPath.section].leagueBadge
+                       cell.logoImage.kf.setImage(with: URL(string: url!), placeholder: UIImage(named: "youtube.png"), options: nil, progressBlock: nil, completionHandler: nil)
+                   default:
+                       cell.title.text = leaguesList[indexPath.section].strLeague
+                               cell.layer.cornerRadius = 15
+                               if leaguesList[indexPath.section].strYoutube == ""{
+                               }else{
+                                   cell.youtubeLink = leaguesList[indexPath.section].strYoutube ?? ""
+                               }
+                               
+                              let url = leaguesList[indexPath.section].strBadge
+                              cell.logoImage.kf.setImage(with: URL(string: url!), placeholder: UIImage(named: "youtube.png"), options: nil, progressBlock: nil, completionHandler: nil)
+                   }
+            
+        
 
                 
             

@@ -14,6 +14,9 @@ import Network
 
 class LeaguesViewController: UIViewController {
   
+    var leagues : [League] = []
+    var context: NSManagedObjectContext!
+      
    var sportName="Soccer"
     var flag = "all"
     var leaguesList:[LeaguesModel] = []
@@ -26,6 +29,9 @@ class LeaguesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = appDelegate.persistentContainer.viewContext
+        
         leaguesPresenter = LeaguesPresenter()
         let connectionState = InternetConnectionManager.isConnectedToNetwork()
         print("connection",connectionState)
@@ -34,6 +40,7 @@ class LeaguesViewController: UIViewController {
             setup()
             print("state is",connectionState)
             if flag == "all"{
+                print(flag)
                 let myUrl = "https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?s="
                 leaguesPresenter?.getLeagues(parameters: sportName ,url: myUrl, completionHandler: { [weak self] leagues, error in
                     print("Completion handler ")
@@ -49,16 +56,20 @@ class LeaguesViewController: UIViewController {
                     }
                 })
             }else{
-                 
-                    self.contextView = self.appDelegate.persistentContainer.viewContext
-                        // update it with database name
-                        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Movie")
-                        do{
-                          self.moviesForDataBase = try (self.contextView?.fetch(fetchRequest))!
-                           print("fetched")
-                        }catch{
-                            print("Error while Fetching")
-                        }
+                print(flag)
+                print("Favorite")
+                fetchAllLeagues()
+                
+                print("favorite ", leagues.count)
+//                    self.contextView = self.appDelegate.persistentContainer.viewContext
+//                        // update it with database name
+//                        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Movie")
+//                        do{
+//                          self.moviesForDataBase = try (self.contextView?.fetch(fetchRequest))!
+//                           print("fetched")
+//                        }catch{
+//                            print("Error while Fetching")
+//                        }
                         
             }
             
@@ -66,14 +77,11 @@ class LeaguesViewController: UIViewController {
             tableView.isHidden = true
             let width = UIScreen.main.bounds.size.width
             let height = UIScreen.main.bounds.size.height
-
             let imageViewBackground = UIImageView(frame: CGRect(x:0, y:0, width: width, height: height))
-             imageViewBackground.image = UIImage(named: "noConnection.jpg")
-            //scaleAspectFit
+            imageViewBackground.image = UIImage(named: "noConnection.jpg")
             imageViewBackground.contentMode = UIView.ContentMode.scaleAspectFit
             self.view.addSubview(imageViewBackground)
             self.view.sendSubviewToBack(imageViewBackground)
-            //self.view.backgroundColor = UIColor(patternImage: imageViewBackground.image!)
             
         }
         
@@ -96,6 +104,15 @@ class LeaguesViewController: UIViewController {
     
     
  
+    
+    func fetchAllLeagues(){
+         do {
+             leagues = try context.fetch(League.fetchRequest())
+            print("league count \(leagues.count)")
+         } catch {
+             print("Error fetching todos")
+         }
+     }
     
 
  
