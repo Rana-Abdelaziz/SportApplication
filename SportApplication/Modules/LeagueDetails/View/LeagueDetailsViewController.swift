@@ -17,34 +17,20 @@ class LeagueDetailsViewController: UIViewController {
     var leagueBadge: String?
     var leagueYoutubeLink: String?
     
-    var context: NSManagedObjectContext!
+    @IBOutlet weak var btnAddRemove: UIButton!
+    
+    var coreData: CoreDataServices?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        context = appDelegate.persistentContainer.viewContext
-        
         setupTableView()
         
-        // link with btn or image instead
-        let league = League(context: context)
+        coreData = CoreDataServices()
+        settingUpAddRemoveButton()
         
-        league.leagueId = leagueId ?? ""
-        league.leagueName = leagueName ?? ""
-        league.leagueBadge = leagueBadge ?? ""
-        league.leagueYoutubeLink = leagueYoutubeLink ?? ""
-        
-        do {
-            try self.context.save()
-            print("league saved with name: \(leagueName ?? "")") // change button or image to remove
-        } catch {
-            // show ui error
-            print("Error adding to favorites")
-        }
+        print("selected leagueId \(leagueId)")
     }
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -59,10 +45,42 @@ class LeagueDetailsViewController: UIViewController {
     }
     
     @IBAction func actionBack(_ sender: UIButton) {
+//        self.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func settingUpAddRemoveButton() {
+        var isInFavs: Bool?
+        isInFavs = coreData?.checkIfLeagueInFavorites(leagueId: leagueId ?? "")
+        print("is in Favs \(isInFavs)")
+        
+        if isInFavs ?? false {
+            btnAddRemove.setTitle("Remove -", for: .normal)
+        } else {
+            btnAddRemove.setTitle("Add +", for: .normal)
+        }
     }
     
     @IBAction func actionAddRemoveFav(_ sender: UIButton) {
+        
+        var isInFavs: Bool?
+        isInFavs = coreData?.checkIfLeagueInFavorites(leagueId: leagueId ?? "")
+        print("is in Favs \(isInFavs)")
+        
+        if btnAddRemove.titleLabel?.text == "Add +" {
+            
+            btnAddRemove.setTitle("Remove -", for: .normal)
+            
+            coreData?.addLeagueToFavorites(leagueId: leagueId ?? "", leagueName: leagueName ?? "", leagueBadge: leagueBadge ?? "", leagueYoutubeLink: leagueYoutubeLink ?? "")
+            
+        } else {
+            btnAddRemove.setTitle("Add +", for: .normal)
+            coreData?.removeItemFromFavorites(leagueId: leagueId ?? "")
+            print("league deleted!")
+        }
+        
     }
+    
     /*
     // MARK: - Navigation
 
