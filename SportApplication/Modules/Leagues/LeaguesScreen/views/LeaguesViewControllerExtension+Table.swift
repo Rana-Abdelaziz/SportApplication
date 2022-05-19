@@ -60,7 +60,6 @@ extension LeaguesViewController : UITableViewDelegate , UITableViewDataSource {
                      }
            
             
-//            self.navigationController?.present(leagueDetailsViewController, animated: true)
             self.navigationController?.pushViewController(leagueDetailsViewController, animated: true)
             
         }

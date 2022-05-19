@@ -17,14 +17,14 @@ class LatestResultsInteractor {
         self.baseUrl = baseUrl
     }
     
-    func getLatestResults(endPoint: String, completionHandler: @escaping (LatestEventsResult?, Error?) -> ()){
+    func getLatestResults(endPoint: String, completionHandler: @escaping (EventsResult?, Error?) -> ()){
         
         print("getLatestResults called")
         
         Alamofire.request(self.baseUrl + endPoint).responseJSON { (response) in
 
             do {
-                let latestResults = try JSONDecoder().decode(LatestEventsResult.self, from: response.data!)
+                let latestResults = try JSONDecoder().decode(EventsResult.self, from: response.data!)
                 completionHandler(latestResults, nil)
 //                print("Sports: \(sports.sports)")
             } catch {

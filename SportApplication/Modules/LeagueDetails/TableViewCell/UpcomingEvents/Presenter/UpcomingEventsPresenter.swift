@@ -23,7 +23,7 @@ class UpcomingEventsPresenter {
     
     private weak var view: UpcomingEventsView?
     private let interactor = UpcomingEventsInteractor(baseUrl: Constants.BASE_URL)
-    private var upcomingEvents = [UpcomingEvent]()
+    private var upcomingEvents = [Event]()
     
     init(view: UpcomingEventsView) {
         self.view = view

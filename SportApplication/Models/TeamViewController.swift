@@ -51,7 +51,8 @@ class TeamViewController: UIViewController {
     
     
     @IBAction func backAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+//        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
      }
      @IBAction func instagramBtn(_ sender: Any) {
          let instagramUrl = NSURL(string:"https://"+team.strInstagram!+"/")

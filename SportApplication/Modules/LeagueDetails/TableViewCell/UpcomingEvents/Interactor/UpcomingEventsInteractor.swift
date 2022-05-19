@@ -17,14 +17,14 @@ class UpcomingEventsInteractor {
         self.baseUrl = baseUrl
     }
     
-    func getUpcomingEvents(endPoint: String, completionHandler: @escaping (UpcomingEventsResult?, Error?) -> ()){
+    func getUpcomingEvents(endPoint: String, completionHandler: @escaping (EventsResult?, Error?) -> ()){
         
         print("getUpcomingEvents called")
         
         Alamofire.request(self.baseUrl + endPoint).responseJSON { (response) in
 
             do {
-                let upcomingEvents = try JSONDecoder().decode(UpcomingEventsResult.self, from: response.data!)
+                let upcomingEvents = try JSONDecoder().decode(EventsResult.self, from: response.data!)
                 completionHandler(upcomingEvents, nil)
 //                print("Sports: \(sports.sports)")
             } catch {

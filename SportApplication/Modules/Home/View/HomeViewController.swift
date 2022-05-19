@@ -16,29 +16,38 @@ class HomeViewController: UIViewController {
         
     
     var leagues : [League]?
-    var context: NSManagedObjectContext!
+//    var context: NSManagedObjectContext!
+    var coreData: CoreDataServices?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        context = appDelegate.persistentContainer.viewContext
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        context = appDelegate.persistentContainer.viewContext
         
         setupCollectionView()
         homePresenter = HomeVCPresenter(view: self)
         homePresenter.viewDidLoad()
         
+        coreData = CoreDataServices()
+        
         fetchAllLeagues()
+        
     }
     
     func fetchAllLeagues(){
-        do {
-            leagues = try context.fetch(League.fetchRequest())
-            print("league count \(leagues?.count)")
-        } catch {
-            print("Error fetching todos")
-        }
+        leagues = coreData?.fetchAllLeagues()
+        print("league count \(leagues?.count)")
     }
+    
+//    func fetchAllLeagues(){
+//        do {
+//            leagues = try context.fetch(League.fetchRequest())
+//            print("league count \(leagues?.count)")
+//        } catch {
+//            print("Error fetching todos")
+//        }
+//    }
     
 
     /*
