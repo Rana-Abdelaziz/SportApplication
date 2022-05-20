@@ -8,11 +8,23 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController {
+class FavoritesViewController: UIViewController, FavoritesView {
 
+    @IBOutlet weak var tableview: UITableView!
+    var favoritesPresenter: FavoritesPresenter!
+//    let coreData = CoreDataServices.shared
+//    var favLeagues = [League]()
+    
+    static let identifier = "FavoritesViewController"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupTableView()
+        favoritesPresenter = FavoritesPresenter(view: self)
+        favoritesPresenter.fetchAllLeagues()
+        
         // Do any additional setup after loading the view.
     }
     

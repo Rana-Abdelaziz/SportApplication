@@ -14,7 +14,6 @@
 		255CFFEF28358EF700441469 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255CFFEE28358EF700441469 /* Reachability.swift */; };
 		25DFB86C282BEC5D00BE87A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DFB86B282BEC5D00BE87A6 /* AppDelegate.swift */; };
 		25DFB86E282BEC5D00BE87A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DFB86D282BEC5D00BE87A6 /* SceneDelegate.swift */; };
-		25DFB870282BEC5D00BE87A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DFB86F282BEC5D00BE87A6 /* ViewController.swift */; };
 		25DFB873282BEC5D00BE87A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DFB871282BEC5D00BE87A6 /* Main.storyboard */; };
 		25DFB876282BEC5D00BE87A6 /* SportApplication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25DFB874282BEC5D00BE87A6 /* SportApplication.xcdatamodeld */; };
 		25DFB878282BEC6C00BE87A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25DFB877282BEC6C00BE87A6 /* Assets.xcassets */; };
@@ -80,6 +79,11 @@
 		BC66900E2835AD87001D016E /* League+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66900C2835AD87001D016E /* League+CoreDataClass.swift */; };
 		BCCFA52B2836CF2E00FD4291 /* CoreDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFA52A2836CF2E00FD4291 /* CoreDataServices.swift */; };
 		BCE4E4F428373A9600C528B0 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4E4F328373A9600C528B0 /* FavoritesViewController.swift */; };
+		BCE4E4F6283740C400C528B0 /* FavoritesViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4E4F5283740C400C528B0 /* FavoritesViewController+TableView.swift */; };
+		BCE4E4F9283748EB00C528B0 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4E4F8283748EB00C528B0 /* FavoritesPresenter.swift */; };
+		BCE4E4FB2837499B00C528B0 /* FavoritesViewController+PresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4E4FA2837499B00C528B0 /* FavoritesViewController+PresenterDelegate.swift */; };
+		BCE4E4FF28374A0F00C528B0 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4E4FD28374A0F00C528B0 /* FavoritesTableViewCell.swift */; };
+		BCE4E50028374A0F00C528B0 /* FavoritesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCE4E4FE28374A0F00C528B0 /* FavoritesTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,7 +110,6 @@
 		25DFB868282BEC5D00BE87A6 /* SportApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DFB86B282BEC5D00BE87A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25DFB86D282BEC5D00BE87A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		25DFB86F282BEC5D00BE87A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		25DFB872282BEC5D00BE87A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		25DFB875282BEC5D00BE87A6 /* SportApplication.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportApplication.xcdatamodel; sourceTree = "<group>"; };
 		25DFB877282BEC6C00BE87A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -183,6 +186,11 @@
 		BC66900C2835AD87001D016E /* League+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "League+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BCCFA52A2836CF2E00FD4291 /* CoreDataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServices.swift; sourceTree = "<group>"; };
 		BCE4E4F328373A9600C528B0 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		BCE4E4F5283740C400C528B0 /* FavoritesViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesViewController+TableView.swift"; sourceTree = "<group>"; };
+		BCE4E4F8283748EB00C528B0 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
+		BCE4E4FA2837499B00C528B0 /* FavoritesViewController+PresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesViewController+PresenterDelegate.swift"; sourceTree = "<group>"; };
+		BCE4E4FD28374A0F00C528B0 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		BCE4E4FE28374A0F00C528B0 /* FavoritesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesTableViewCell.xib; sourceTree = "<group>"; };
 		D33DD23AEB3BDDC4A13A2BBF /* Pods-SportApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportApplication.release.xcconfig"; path = "Target Support Files/Pods-SportApplication/Pods-SportApplication.release.xcconfig"; sourceTree = "<group>"; };
 		D98BE83FAF5E654AC2D3110D /* Pods_SportApplication_SportApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportApplication_SportApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -286,13 +294,11 @@
 				25CCBCBD282C642B0056F06E /* Modules */,
 				25DFB86B282BEC5D00BE87A6 /* AppDelegate.swift */,
 				25DFB86D282BEC5D00BE87A6 /* SceneDelegate.swift */,
-				25DFB86F282BEC5D00BE87A6 /* ViewController.swift */,
 				25DFB871282BEC5D00BE87A6 /* Main.storyboard */,
 				25DFB877282BEC6C00BE87A6 /* Assets.xcassets */,
 				25DFB879282BEC6C00BE87A6 /* LaunchScreen.storyboard */,
 				25DFB87C282BEC6C00BE87A6 /* Info.plist */,
 				25DFB874282BEC5D00BE87A6 /* SportApplication.xcdatamodeld */,
-				255CFFEE28358EF700441469 /* Reachability.swift */,
 			);
 			path = SportApplication;
 			sourceTree = "<group>";
@@ -621,6 +627,7 @@
 			isa = PBXGroup;
 			children = (
 				BC205DC52833414B001A771F /* Constants.swift */,
+				255CFFEE28358EF700441469 /* Reachability.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -663,6 +670,8 @@
 		BCE4E4F028373A1C00C528B0 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				BCE4E4FC283749F600C528B0 /* TableViewCell */,
+				BCE4E4F72837486900C528B0 /* Presenter */,
 				BCE4E4F128373A3C00C528B0 /* View */,
 			);
 			path = Favorites;
@@ -672,8 +681,27 @@
 			isa = PBXGroup;
 			children = (
 				BCE4E4F328373A9600C528B0 /* FavoritesViewController.swift */,
+				BCE4E4F5283740C400C528B0 /* FavoritesViewController+TableView.swift */,
+				BCE4E4FA2837499B00C528B0 /* FavoritesViewController+PresenterDelegate.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BCE4E4F72837486900C528B0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BCE4E4F8283748EB00C528B0 /* FavoritesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BCE4E4FC283749F600C528B0 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BCE4E4FD28374A0F00C528B0 /* FavoritesTableViewCell.swift */,
+				BCE4E4FE28374A0F00C528B0 /* FavoritesTableViewCell.xib */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -786,6 +814,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25FF167328304EA300706D24 /* LeaguesTableViewCell.xib in Resources */,
+				BCE4E50028374A0F00C528B0 /* FavoritesTableViewCell.xib in Resources */,
 				BC205D992833232B001A771F /* LatestResultsTableViewCell.xib in Resources */,
 				BC205DBA28332EFE001A771F /* TeamsCollectionViewCell.xib in Resources */,
 				BC205DA128332418001A771F /* LatestResultsCollectionViewCell.xib in Resources */,
@@ -942,12 +971,13 @@
 				25FD8C342830441A00A46361 /* TeamsPresenter.swift in Sources */,
 				25FD8C2E2830127300A46361 /* TeamNetworkManager.swift in Sources */,
 				BC205D8A28331FAC001A771F /* UpcomingEventsInteractor.swift in Sources */,
-				25DFB870282BEC5D00BE87A6 /* ViewController.swift in Sources */,
 				BC66900D2835AD87001D016E /* League+CoreDataProperties.swift in Sources */,
+				BCE4E4F9283748EB00C528B0 /* FavoritesPresenter.swift in Sources */,
 				BC205DC3283330F8001A771F /* TeamsInteractor.swift in Sources */,
 				25FF167828304EDC00706D24 /* SportsResult.swift in Sources */,
 				25DFB876282BEC5D00BE87A6 /* SportApplication.xcdatamodeld in Sources */,
 				25DFB86C282BEC5D00BE87A6 /* AppDelegate.swift in Sources */,
+				BCE4E4FF28374A0F00C528B0 /* FavoritesTableViewCell.swift in Sources */,
 				BC205DBF28332FC4001A771F /* TeamsResult.swift in Sources */,
 				BC205D8828331F69001A771F /* UpcomingEventsPresenter.swift in Sources */,
 				BC205DCC28334542001A771F /* Event.swift in Sources */,
@@ -956,6 +986,7 @@
 				BC205DC62833414B001A771F /* Constants.swift in Sources */,
 				BC205DB628332E79001A771F /* TeamsTableViewCellExtension+PresenterDelegate.swift in Sources */,
 				25FF166E28304E8100706D24 /* LeaguesPresenter.swift in Sources */,
+				BCE4E4F6283740C400C528B0 /* FavoritesViewController+TableView.swift in Sources */,
 				25FD8C1928300CFB00A46361 /* HomeInteractor.swift in Sources */,
 				25FD8C2128300D3F00A46361 /* HomeViewControllerExtension+PresenterDelegate.swift in Sources */,
 				25FD8C3028302CFC00A46361 /* TeamsResualt.swift in Sources */,
@@ -966,6 +997,7 @@
 				25FD8C2328300D3F00A46361 /* HomeViewController.swift in Sources */,
 				BC66900E2835AD87001D016E /* League+CoreDataClass.swift in Sources */,
 				25DFB86E282BEC5D00BE87A6 /* SceneDelegate.swift in Sources */,
+				BCE4E4FB2837499B00C528B0 /* FavoritesViewController+PresenterDelegate.swift in Sources */,
 				BC205DB128332BB9001A771F /* TeamsTableViewCell.swift in Sources */,
 				BC205DB428332E67001A771F /* TeamsTableViewCellExtension+CollectionView.swift in Sources */,
 				25FD8C2A283011F400A46361 /* TeamModel.swift in Sources */,

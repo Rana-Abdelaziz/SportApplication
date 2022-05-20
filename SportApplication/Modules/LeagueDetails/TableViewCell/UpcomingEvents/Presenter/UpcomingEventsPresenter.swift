@@ -29,14 +29,6 @@ class UpcomingEventsPresenter {
         self.view = view
     }
     
-//    func viewDidLoad(leagueId: String?) {
-////        guard let league = leagueId else {
-////            return
-////        }
-//        print("presenter leauge \(leagueId)")
-//        getUpcomingEvents(leagueId: leagueId)
-//    }
-    
     func getUpcomingEvents(leagueId: String){
         view?.showIndicator()
         interactor.getUpcomingEvents(endPoint: Constants.END_POINT_EVENTS + leagueId, completionHandler: { [weak self] upcomingEvents, error in

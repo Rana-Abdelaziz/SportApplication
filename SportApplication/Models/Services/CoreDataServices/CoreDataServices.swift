@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 import CoreData
 
-//extension CodingUserInfoKey
-
 class CoreDataServices {
     
     static let shared = CoreDataServices()

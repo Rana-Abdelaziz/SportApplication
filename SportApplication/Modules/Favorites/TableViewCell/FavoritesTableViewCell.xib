@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="FavoritesTableViewCell" customModule="SportApplication" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7aY-B4-wgE">
+                        <rect key="frame" x="16" y="0.0" width="50" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="b7T-9S-S0F"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhr-xv-Cci">
+                        <rect key="frame" x="82" y="0.0" width="42" height="44"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youtube" translatesAutoresizingMaskIntoConstraints="NO" id="Ifv-UH-JY4">
+                        <rect key="frame" x="274" y="0.0" width="30" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="CYt-zU-nfO"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ifv-UH-JY4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0oG-eb-KGq"/>
+                    <constraint firstAttribute="bottom" secondItem="7aY-B4-wgE" secondAttribute="bottom" id="DrL-jO-Mu7"/>
+                    <constraint firstItem="7aY-B4-wgE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="EPz-bW-I0V"/>
+                    <constraint firstItem="vhr-xv-Cci" firstAttribute="leading" secondItem="7aY-B4-wgE" secondAttribute="trailing" constant="16" id="FCq-V5-ChU"/>
+                    <constraint firstAttribute="bottom" secondItem="vhr-xv-Cci" secondAttribute="bottom" id="H7X-qC-2Ss"/>
+                    <constraint firstAttribute="trailing" secondItem="Ifv-UH-JY4" secondAttribute="trailing" constant="16" id="YO0-AY-UaO"/>
+                    <constraint firstItem="7aY-B4-wgE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eEv-lZ-9wc"/>
+                    <constraint firstItem="vhr-xv-Cci" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="iTm-UY-hoK"/>
+                    <constraint firstAttribute="bottom" secondItem="Ifv-UH-JY4" secondAttribute="bottom" id="lUa-9c-NPg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="leagueImage" destination="7aY-B4-wgE" id="ckD-yZ-RBb"/>
+                <outlet property="leagueName" destination="vhr-xv-Cci" id="47u-xy-lv0"/>
+                <outlet property="youtubeBtn" destination="Ifv-UH-JY4" id="8df-0u-Otv"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="87.723214285714278"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="youtube" width="512" height="512"/>
+    </resources>
+</document>

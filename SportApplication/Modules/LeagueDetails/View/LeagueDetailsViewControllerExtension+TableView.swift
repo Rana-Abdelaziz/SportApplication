@@ -24,13 +24,7 @@ extension LeagueDetailsViewController: UITableViewDataSource, UITableViewDelegat
         
     }
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        3
-//    }
-
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //switch
         return 3
         
     }
