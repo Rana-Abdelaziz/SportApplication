@@ -19,14 +19,15 @@ class LeagueDetailsViewController: UIViewController {
     
     @IBOutlet weak var btnAddRemove: UIButton!
     
-    var coreData: CoreDataServices?
+//    var coreData: CoreDataServices?
+    let coreData = CoreDataServices.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
         
-        coreData = CoreDataServices()
+//        coreData = CoreDataServices()
         settingUpAddRemoveButton()
         
         print("selected leagueId \(leagueId)")
@@ -51,7 +52,7 @@ class LeagueDetailsViewController: UIViewController {
     
     func settingUpAddRemoveButton() {
         var isInFavs: Bool?
-        isInFavs = coreData?.checkIfLeagueInFavorites(leagueId: leagueId ?? "")
+        isInFavs = coreData.checkIfLeagueInFavorites(leagueId: leagueId ?? "")
         print("is in Favs \(isInFavs)")
         
         if isInFavs ?? false {
@@ -64,18 +65,18 @@ class LeagueDetailsViewController: UIViewController {
     @IBAction func actionAddRemoveFav(_ sender: UIButton) {
         
         var isInFavs: Bool?
-        isInFavs = coreData?.checkIfLeagueInFavorites(leagueId: leagueId ?? "")
+        isInFavs = coreData.checkIfLeagueInFavorites(leagueId: leagueId ?? "")
         print("is in Favs \(isInFavs)")
         
         if btnAddRemove.titleLabel?.text == "Add +" {
             
             btnAddRemove.setTitle("Remove -", for: .normal)
             
-            coreData?.addLeagueToFavorites(leagueId: leagueId ?? "", leagueName: leagueName ?? "", leagueBadge: leagueBadge ?? "", leagueYoutubeLink: leagueYoutubeLink ?? "")
+            coreData.addLeagueToFavorites(leagueId: leagueId ?? "", leagueName: leagueName ?? "", leagueBadge: leagueBadge ?? "", leagueYoutubeLink: leagueYoutubeLink ?? "")
             
         } else {
             btnAddRemove.setTitle("Add +", for: .normal)
-            coreData?.removeItemFromFavorites(leagueId: leagueId ?? "")
+            coreData.removeItemFromFavorites(leagueId: leagueId ?? "")
             print("league deleted!")
         }
         

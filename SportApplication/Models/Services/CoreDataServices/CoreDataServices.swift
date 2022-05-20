@@ -14,6 +14,7 @@ import CoreData
 
 class CoreDataServices {
     
+    static let shared = CoreDataServices()
     var context: NSManagedObjectContext!
     let entity : NSEntityDescription!
     
