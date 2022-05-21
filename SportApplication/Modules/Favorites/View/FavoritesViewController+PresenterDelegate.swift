@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension FavoritesViewController {
     
@@ -25,6 +26,10 @@ extension FavoritesViewController {
     
     func showError() {
         print("showError")
+    }
+    
+    func navigateToLeagueDetails(leagueDetailsViewController: UIViewController, leagueId: String, leagueName: String) {
+        navigationController?.pushViewController(leagueDetailsViewController, animated: true)
     }
     
 }

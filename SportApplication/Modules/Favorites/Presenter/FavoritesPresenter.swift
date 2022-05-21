@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 protocol FavoritesView: class {
@@ -14,6 +15,7 @@ protocol FavoritesView: class {
     func hideIndicator()
     func fetchingDataSuccess()
     func showError()
+    func navigateToLeagueDetails(leagueDetailsViewController: UIViewController, leagueId: String, leagueName: String)
 }
 
 protocol FavoritesCellView {
@@ -36,6 +38,13 @@ class FavoritesPresenter {
         print("fav leagues called")
         favorites = coreData.fetchAllLeagues()
         self.view?.fetchingDataSuccess()
+    }
+    
+    func deleteLeagueAtIndex(_ index: Int){
+       
+        coreData.deleteLeagueAtIndex(index)
+        favorites.remove(at: index)
+        
     }
     
     
@@ -66,6 +75,24 @@ class FavoritesPresenter {
         let league = favorites[index]
         cell.displayLeagueName(leagueName: league.leagueName ?? "")
         cell.displayLeagueImage(leagueImage: league.leagueBadge ?? "")
+    }
+    
+    func getLeagueIdAtIndex(index: Int) -> String {
+        return favorites[index].leagueId ?? ""
+    }
+    
+    func getLeagueNameAtIndex(index: Int) -> String {
+        return favorites[index].leagueName ?? ""
+    }
+    
+    func didSelectRow(leagueDetailsViewController: UIViewController, index: Int) {
+        let league = favorites[index]
+        let leagueId = league.leagueId
+        let leagueName = league.leagueName
+//        let leagueDetailsViewController = LeagueDetailsViewController(nibName: "LeagueDetailsViewController", bundle: nil)
+//        let leagueDetailsViewController = storyboard?.instantiateViewController(withIdentifier: "LeaguesDetailsViewController") as! LeagueDetailsViewController
+        view?.navigateToLeagueDetails(leagueDetailsViewController: leagueDetailsViewController, leagueId: leagueId ?? "", leagueName: leagueName ?? "")
+        print("selected fav league name: \(leagueName), id: \(leagueId)")
     }
     
 }

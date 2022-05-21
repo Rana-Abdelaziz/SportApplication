@@ -30,7 +30,7 @@ class LeagueDetailsViewController: UIViewController {
 //        coreData = CoreDataServices()
         settingUpAddRemoveButton()
         
-        print("selected leagueId \(leagueId)")
+        print("selected leagueId \(leagueId) name : \(leagueName)")
     }
     
     override func viewWillAppear(_ animated: Bool) {

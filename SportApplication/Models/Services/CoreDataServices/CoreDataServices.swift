@@ -92,4 +92,19 @@ class CoreDataServices {
         }
     }
     
+    func deleteLeagueAtIndex(_ index: Int){
+       
+        let favorites = fetchAllLeagues()
+        
+        print("deleting \(favorites[index].leagueName ?? "")")
+        
+        context.delete(favorites[index])
+        
+        do {
+            try context.save()
+        } catch {
+            print("Error deleting league")
+        }
+    }
+    
 }
