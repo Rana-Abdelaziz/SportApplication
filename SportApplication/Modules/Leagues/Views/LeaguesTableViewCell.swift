@@ -29,10 +29,7 @@ class LeaguesTableViewCell: UITableViewCell {
             let youtubeUrl = NSURL(string:"https://"+myUrl)!
             UIApplication.shared.openURL(youtubeUrl as URL)
         }
-//        else{
-//            controller.showAlert()
-//        }
-//
+
       }
         
     }

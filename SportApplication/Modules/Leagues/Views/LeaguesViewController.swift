@@ -38,41 +38,20 @@ class LeaguesViewController: UIViewController {
         if connectionState {
             tableView.isHidden = false
             setup()
-            print("state is",connectionState)
-            if flag == "all"{
-                print(flag)
-                let myUrl = "https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?s="
-                leaguesPresenter?.getLeagues(parameters: sportName ,url: myUrl, completionHandler: { [weak self] leagues, error in
-                    print("Completion handler ")
-                    if let error = error {
-                        print(error)
-                    } else {
-                        guard let resualt = leagues else { return }
-                        self?.leaguesList = resualt.countries ?? []
-                        self!.tableView.reloadData()
-                        print(resualt)
-                        
-                       
-                    }
-                })
-            }else{
-                print(flag)
-                print("Favorite")
-                fetchAllLeagues()
-                
-                print("favorite ", leagues.count)
-//                    self.contextView = self.appDelegate.persistentContainer.viewContext
-//                        // update it with database name
-//                        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Movie")
-//                        do{
-//                          self.moviesForDataBase = try (self.contextView?.fetch(fetchRequest))!
-//                           print("fetched")
-//                        }catch{
-//                            print("Error while Fetching")
-//                        }
-                        
-            }
-            
+        let myUrl = "https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?s="
+                  leaguesPresenter?.getLeagues(parameters: sportName ,url: myUrl, completionHandler: { [weak self] leagues, error in
+                      print("Completion handler ")
+                      if let error = error {
+                          print(error)
+                      } else {
+                          guard let resualt = leagues else { return }
+                          self?.leaguesList = resualt.countries ?? []
+                          self!.tableView.reloadData()
+                          print(resualt)
+                          
+                         
+                      }
+                  })
         }else{
             tableView.isHidden = true
             let width = UIScreen.main.bounds.size.width
