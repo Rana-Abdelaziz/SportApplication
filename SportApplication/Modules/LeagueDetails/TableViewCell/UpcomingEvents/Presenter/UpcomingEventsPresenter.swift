@@ -17,6 +17,7 @@ protocol UpcomingEventsView: class {
 
 protocol UpcomingEventsCellView {
     func displayImage(strSportThumb: String)
+    func displayEventDateAndTime(dateEventLocal: String, strTimeLocal: String)
 }
 
 class UpcomingEventsPresenter {
@@ -54,6 +55,7 @@ class UpcomingEventsPresenter {
     func configure(cell: UpcomingEventsCollectionViewCell, for index: Int) {
         let upcomingEvent = upcomingEvents[index]
         cell.displayEventImage(strSportThumb: upcomingEvent.strThumb ?? "")
+        cell.displayEventDateAndTime(dateEventLocal: upcomingEvent.dateEventLocal ?? "", strTimeLocal: upcomingEvent.strTimeLocal ?? "")
     }
     
 }

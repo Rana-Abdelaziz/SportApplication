@@ -22,6 +22,7 @@ class LatestResultsTableViewCell: UITableViewCell, LatestResultsView {
         
         setupCollectionView()
         latestResultsPresenter = LatestResultsPresenter(view: self)
+        
 //        leagueDetailsPresenter = LeagueDetailsPresenter()
 //        leagueDetailsPresenter.setLatestResults()
 //        latestResultsPresenter.viewDidLoad()

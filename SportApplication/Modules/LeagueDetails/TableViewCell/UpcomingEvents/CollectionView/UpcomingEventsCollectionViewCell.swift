@@ -12,6 +12,8 @@ import Kingfisher
 class UpcomingEventsCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var dateAndTime: UILabel!
+    
     static let identifier = "UpcomingEventsCollectionViewCell"
     
     override func awakeFromNib() {
@@ -26,6 +28,10 @@ class UpcomingEventsCollectionViewCell: UICollectionViewCell {
     // set event image
     func displayEventImage(strSportThumb: String) {
         imageView.kf.setImage(with: URL(string: strSportThumb), placeholder: UIImage(named: "placeholder.jpeg"), options: nil, progressBlock: nil, completionHandler: nil)
+    }
+    
+    func displayEventDateAndTime(dateEventLocal: String, strTimeLocal: String) {
+        dateAndTime.text = "\(dateEventLocal) : \(strTimeLocal)"
     }
     
 }

@@ -13,42 +13,26 @@ class HomeViewController: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
     var homePresenter: HomeVCPresenter!
-        
-    
-//    var leagues : [League]?
-//    var context: NSManagedObjectContext!
-//    var coreData: CoreDataServices?
+    let indicator = UIActivityIndicatorView(style: .medium)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        context = appDelegate.persistentContainer.viewContext
-        
-        setupCollectionView()
         homePresenter = HomeVCPresenter(view: self)
-        homePresenter.viewDidLoad()
-        
-//        coreData = CoreDataServices()
-        
-//        fetchAllLeagues()
-        
     }
     
-//    func fetchAllLeagues(){
-//        leagues = coreData?.fetchAllLeagues()
-//        print("league count \(leagues?.count)")
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        setupCollectionView()
+        homePresenter.viewDidLoad()
+    }
     
-//    func fetchAllLeagues(){
-//        do {
-//            leagues = try context.fetch(League.fetchRequest())
-//            print("league count \(leagues?.count)")
-//        } catch {
-//            print("Error fetching todos")
-//        }
-//    }
-    
+    func showAlert(){
+        
+        let alert : UIAlertController = UIAlertController(title: "Error", message: "Something wrong happend while trying to get your data!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        present(alert,animated: true,completion: nil)
+    }
 
     /*
     // MARK: - Navigation

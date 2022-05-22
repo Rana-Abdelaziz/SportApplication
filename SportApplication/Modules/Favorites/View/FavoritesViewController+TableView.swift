@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Toaster
 
 extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -33,20 +34,21 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
         cell.layer.shadowOpacity = 0.3
         cell.layer.masksToBounds = false
         
-//        cell.youtubeLink
-//        cell.youtubeLink = leaguesList[indexPath.section].strYoutube ?? ""
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let leagueDetailsViewController = storyboard?.instantiateViewController(withIdentifier: "LeaguesDetailsViewController") as! LeagueDetailsViewController
-        
-        leagueDetailsViewController.leagueId = favoritesPresenter.getLeagueIdAtIndex(index: indexPath.row)
-        leagueDetailsViewController.leagueName = favoritesPresenter.getLeagueNameAtIndex(index: indexPath.row)
-        
-        self.navigationController?.pushViewController(leagueDetailsViewController, animated: true)
+        if InternetConnectionManager.isConnectedToNetwork() {
+            let leagueDetailsViewController = storyboard?.instantiateViewController(withIdentifier: "LeaguesDetailsViewController") as! LeagueDetailsViewController
+            
+            leagueDetailsViewController.leagueId = favoritesPresenter.getLeagueIdAtIndex(index: indexPath.row)
+            leagueDetailsViewController.leagueName = favoritesPresenter.getLeagueNameAtIndex(index: indexPath.row)
+            
+            self.navigationController?.pushViewController(leagueDetailsViewController, animated: true)
+        } else {
+            showAlert()
+        }
         
     }
     
@@ -59,6 +61,14 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
             tableview.reloadData()
             
         }
+    }
+    
+    func showAlert(){
+        
+        let alert : UIAlertController = UIAlertController(title: "Internet is not available", message: "You need to get internet connection before doing this operation!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        present(alert,animated: true,completion: nil)
     }
     
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -11,11 +11,16 @@ import Foundation
 extension HomeViewController: HomeView {
     
     func showIndicator() {
-        print("showIndicator")
+        
+        indicator.center = self.view.center
+        view.addSubview(indicator)
+        
+        indicator.startAnimating()
     }
     
     func hideIndicator() {
-        print("hideIndicator")
+        
+        indicator.stopAnimating()
     }
     
     func fetchingDataSuccess() {
@@ -24,7 +29,7 @@ extension HomeViewController: HomeView {
     }
     
     func showError() {
-        print("showError")
+        showAlert()
     }
     
 }

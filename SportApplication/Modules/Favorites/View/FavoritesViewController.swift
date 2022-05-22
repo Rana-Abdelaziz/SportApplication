@@ -15,7 +15,6 @@ class FavoritesViewController: UIViewController, FavoritesView {
     
     static let identifier = "FavoritesViewController"
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

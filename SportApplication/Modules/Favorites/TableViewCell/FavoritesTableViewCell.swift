@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import Toaster
 
 class FavoritesTableViewCell: UITableViewCell {
 
@@ -15,6 +16,8 @@ class FavoritesTableViewCell: UITableViewCell {
     @IBOutlet weak var leagueName: UILabel!
     @IBOutlet weak var youtubeBtn: UIImageView!
     var youtubeLink: String = ""
+    
+//    var showAlert: (() -> Void)? = nil
     
 //    var favoritesPresenter: FavoritesPresenter!
     
@@ -54,7 +57,12 @@ class FavoritesTableViewCell: UITableViewCell {
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         
-        goToYoutube(youtubeLink: youtubeLink)
+        if InternetConnectionManager.isConnectedToNetwork() {
+            goToYoutube(youtubeLink: youtubeLink)
+        } else {
+            Toast(text: "You need to get internet connection before doing this operation!").show()
+        }
+        
         
 //        let youtubeId = "SxTYjptEzZs"
 //          let youtubeUrl = NSURL(string:"youtube://\(youtubeId)")!
@@ -89,5 +97,13 @@ class FavoritesTableViewCell: UITableViewCell {
         }
 
     }
+    
+//    func showAlert(){
+//        
+//        let alert : UIAlertController = UIAlertController(title: "Internet is not available", message: "You need to get internet connection before doing this operation!", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+//        
+//        present(alert,animated: true,completion: nil)
+//    }
     
 }

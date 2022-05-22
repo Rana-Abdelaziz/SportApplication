@@ -14,6 +14,7 @@ class LatestResultsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var awayTeam: UILabel!
     @IBOutlet weak var score: UILabel!
     @IBOutlet weak var dateAndTime: UILabel!
+    
     static let identifier = "LatestResultsCollectionViewCell"
     
     override func awakeFromNib() {

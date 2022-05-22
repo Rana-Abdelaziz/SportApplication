@@ -45,8 +45,6 @@ extension TeamsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TeamsCollectionViewCell.identifier, for: indexPath) as! TeamsCollectionViewCell
         
-        
-        
         teamsPresenter.configure(cell: cell, for: indexPath.row)
         
         cell.layer.shadowColor = UIColor.black.cgColor

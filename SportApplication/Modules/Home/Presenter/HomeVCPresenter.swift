@@ -63,6 +63,10 @@ class HomeVCPresenter {
         return sports[index].strSport ?? ""
     }
     
+    func removeSports(){
+        sports.removeAll()
+    }
+    
     func configure(cell: HomeCollectionViewCell, for index: Int) {
         let sport = sports[index]
         cell.displaySportName(strSport: sport.strSport ?? "")

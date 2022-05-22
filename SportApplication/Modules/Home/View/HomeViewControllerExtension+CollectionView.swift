@@ -12,14 +12,30 @@ import UIKit
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func setupCollectionView(){
-        let layout = UICollectionViewFlowLayout()
-        collectionView.collectionViewLayout = layout
-        layout.itemSize = CGSize(width: (self.view.bounds.width - 48) / 2, height: (self.view.bounds.width + 20) / 2)
         
-        collectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
+        if InternetConnectionManager.isConnectedToNetwork() {
+            let layout = UICollectionViewFlowLayout()
+            collectionView.collectionViewLayout = layout
+            layout.itemSize = CGSize(width: (self.view.bounds.width - 48) / 2, height: (self.view.bounds.width + 20) / 2)
+            
+            collectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
+            
+            collectionView.delegate = self
+            collectionView.dataSource = self
+            
+        } else {
+            homePresenter.removeSports()
+            collectionView.reloadData()
+            let imageName = "noConnection.jpeg"
+            let image = UIImage(named: imageName)
+            let imageView = UIImageView(image: image!)
+            
+            let width = collectionView.frame.width
+            let height = collectionView.frame.height
+            imageView.frame = CGRect(x: 0, y: 0, width: width, height: height)
+            view.addSubview(imageView)
+        }
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
     }
     
     // delegate
@@ -58,11 +74,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        
-        
-//        return CGSize(width: (self.view.bounds.width - 48) / 2, height: (self.view.bounds.width + 20) / 2)
-//        return CGSize(width: (self.view.bounds.width - 48) / 2, height: (self.view.bounds.width - 48) / 2)
-//        let width = (collectionView.frame.width - 2) / 3
         let width = (collectionView.frame.width - 10) / 2
         return CGSize(width: width, height: width)
         

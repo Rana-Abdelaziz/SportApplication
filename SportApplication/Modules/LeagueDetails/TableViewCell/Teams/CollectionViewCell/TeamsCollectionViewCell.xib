@@ -22,10 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQc-4H-dIA">
-                        <rect key="frame" x="0.0" y="21" width="50" height="21"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <rect key="frame" x="0.0" y="-7" width="50" height="25"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
+                        <color key="shadowColor" systemColor="labelColor"/>
                     </label>
                 </subviews>
             </view>
@@ -36,9 +37,9 @@
                 <constraint firstAttribute="bottom" secondItem="LF9-c9-tr6" secondAttribute="bottom" id="25m-ci-eZN"/>
                 <constraint firstItem="LF9-c9-tr6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="f2N-DD-wED"/>
                 <constraint firstItem="PQc-4H-dIA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="j3i-aE-Y4e"/>
+                <constraint firstAttribute="bottom" secondItem="PQc-4H-dIA" secondAttribute="bottom" constant="32" id="tl3-pr-ubl"/>
                 <constraint firstAttribute="trailing" secondItem="PQc-4H-dIA" secondAttribute="trailing" id="uO2-MT-L68"/>
                 <constraint firstItem="LF9-c9-tr6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ugP-Dn-06q"/>
-                <constraint firstAttribute="bottom" secondItem="PQc-4H-dIA" secondAttribute="bottom" constant="8" id="yHf-cY-7QP"/>
             </constraints>
             <connections>
                 <outlet property="teamImage" destination="LF9-c9-tr6" id="7lm-cF-uDy"/>
@@ -48,6 +49,9 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
