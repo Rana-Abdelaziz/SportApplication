@@ -64,9 +64,9 @@ class LeagueDetailsViewController: UIViewController {
     
     @IBAction func actionAddRemoveFav(_ sender: UIButton) {
         
-        var isInFavs: Bool?
-        isInFavs = coreData.checkIfLeagueInFavorites(leagueId: leagueId ?? "")
-        print("is in Favs \(isInFavs)")
+//        var isInFavs: Bool?
+//        isInFavs = coreData.checkIfLeagueInFavorites(leagueId: leagueId ?? "")
+//        print("is in Favs \(isInFavs)")
         
         if btnAddRemove.titleLabel?.text == "Add +" {
             

@@ -42,6 +42,12 @@ extension UpcomingEventsTableViewCell: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UpcomingEventsCollectionViewCell.identifier, for: indexPath) as! UpcomingEventsCollectionViewCell
+        
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 3, height: 3)
+        cell.layer.shadowRadius = 4
+        cell.layer.shadowOpacity = 0.3
+        cell.layer.masksToBounds = false
 
         upcomingEventsPresenter.configure(cell: cell, for: indexPath.row)
         

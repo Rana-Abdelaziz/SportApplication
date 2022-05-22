@@ -14,11 +14,20 @@ class FavoritesTableViewCell: UITableViewCell {
     @IBOutlet weak var leagueImage: UIImageView!
     @IBOutlet weak var leagueName: UILabel!
     @IBOutlet weak var youtubeBtn: UIImageView!
+    var youtubeLink: String = ""
+    
+//    var favoritesPresenter: FavoritesPresenter!
     
     static let identifier = "FavoritesTableViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+//        favoritesPresenter = FavoritesPresenter(view: self)
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        youtubeBtn.isUserInteractionEnabled = true
+        youtubeBtn.addGestureRecognizer(tapGestureRecognizer)
         // Initialization code
     }
 
@@ -36,6 +45,49 @@ class FavoritesTableViewCell: UITableViewCell {
     // set event image
     func displayLeagueName(leagueName: String) {
         self.leagueName.text = leagueName
+    }
+    func getYoutubeLink(youtubeLink: String) {
+        self.youtubeLink = youtubeLink
+    }
+    
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        
+        goToYoutube(youtubeLink: youtubeLink)
+        
+//        let youtubeId = "SxTYjptEzZs"
+//          let youtubeUrl = NSURL(string:"youtube://\(youtubeId)")!
+//
+//        if UIApplication.shared.canOpenURL(youtubeUrl as URL){
+//            UIApplication.shared.openURL(youtubeUrl as URL)
+//        } else{
+//
+//          let myUrl = youtubeLink
+//          if((myUrl) != ""){
+//              let youtubeUrl = NSURL(string:"https://"+myUrl)!
+//              UIApplication.shared.openURL(youtubeUrl as URL)
+//          }
+  //        else{
+  //            controller.showAlert()
+  //        }
+  //
+//        }
+//        let youtubeLink = favoritesPresenter.
+    }
+    
+    func goToYoutube(youtubeLink: String?) {
+
+        let appName = "youtube"
+        let appScheme = "\(appName)://app"
+        let appUrl = URL(string: appScheme)
+
+        if UIApplication.shared.canOpenURL(appUrl! as URL) {
+            UIApplication.shared.open(appUrl!)
+        } else {
+            UIApplication.shared.open(URL(string: ("https://\(youtubeLink ?? "")"))!, options: [:], completionHandler: nil)
+        }
+
     }
     
 }

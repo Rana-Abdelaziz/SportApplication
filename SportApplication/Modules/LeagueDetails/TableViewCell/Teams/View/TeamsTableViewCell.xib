@@ -11,15 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="TeamsTableViewCell" customModule="SportApplication" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="118" id="KGk-i7-Jjw" customClass="TeamsTableViewCell" customModule="SportApplication" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lUP-le-1k6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="37" width="320" height="81"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1Uo-Oj-Kp5">
                             <size key="itemSize" width="128" height="128"/>
@@ -28,19 +28,28 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmh-4m-HfI">
+                        <rect key="frame" x="16" y="8" width="288" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="lUP-le-1k6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="4dc-Qz-uYq"/>
-                    <constraint firstAttribute="trailing" secondItem="lUP-le-1k6" secondAttribute="trailing" id="FWV-IE-lmn"/>
-                    <constraint firstAttribute="bottom" secondItem="lUP-le-1k6" secondAttribute="bottom" id="hgC-w5-OFD"/>
-                    <constraint firstItem="lUP-le-1k6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zGI-n2-w9t"/>
+                    <constraint firstAttribute="trailing" secondItem="lUP-le-1k6" secondAttribute="trailing" id="4ds-H6-Nn2"/>
+                    <constraint firstItem="mmh-4m-HfI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="7tH-kl-iF3"/>
+                    <constraint firstAttribute="bottom" secondItem="lUP-le-1k6" secondAttribute="bottom" id="Kls-1A-MVZ"/>
+                    <constraint firstItem="lUP-le-1k6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="RtZ-KQ-veI"/>
+                    <constraint firstItem="lUP-le-1k6" firstAttribute="top" secondItem="mmh-4m-HfI" secondAttribute="bottom" constant="8" id="Xx7-t9-p5Q"/>
+                    <constraint firstAttribute="trailing" secondItem="mmh-4m-HfI" secondAttribute="trailing" constant="16" id="mfR-a9-HII"/>
+                    <constraint firstItem="mmh-4m-HfI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="r3j-EX-Q5c"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="collectionView" destination="lUP-le-1k6" id="4Wa-0p-9Dh"/>
             </connections>
-            <point key="canvasLocation" x="132" y="88"/>
+            <point key="canvasLocation" x="131.8840579710145" y="112.5"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -26,7 +26,7 @@ class HomeInteractor {
             do {
                 let sports = try JSONDecoder().decode(SportsResult.self, from: response.data!)
                 completionHandler(sports, nil)
-                print("Sports: \(sports.sports)")
+//                print("Sports: \(sports.sports)")
             } catch {
                 print("error loading data")
                 completionHandler(nil, error)

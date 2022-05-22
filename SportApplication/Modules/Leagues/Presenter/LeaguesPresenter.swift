@@ -14,14 +14,14 @@ class LeaguesPresenter:LeaguesProtocol{
         let network = LeaguesNetworkManager(baseUrl: url)
         network.getLeagues(param: parameters,completionHandler: { leagues, error in
 
-                         if let error = error {
-                             print(error)
-                            completionHandler(nil,Error.self as? Error)
-                         } else {
-                             guard let resualt = leagues else { return }
-                            completionHandler(resualt,nil)
-                         }
-                     })
+         if let error = error {
+             print(error)
+            completionHandler(nil,Error.self as? Error)
+         } else {
+             guard let resualt = leagues else { return }
+            completionHandler(resualt,nil)
+         }
+     })
         
     }
 }

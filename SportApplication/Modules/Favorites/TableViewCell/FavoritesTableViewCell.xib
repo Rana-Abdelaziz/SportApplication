@@ -52,7 +52,7 @@
             <connections>
                 <outlet property="leagueImage" destination="7aY-B4-wgE" id="ckD-yZ-RBb"/>
                 <outlet property="leagueName" destination="vhr-xv-Cci" id="47u-xy-lv0"/>
-                <outlet property="youtubeBtn" destination="Ifv-UH-JY4" id="8df-0u-Otv"/>
+                <outlet property="youtubeBtn" destination="Ifv-UH-JY4" id="uJR-xc-j9c"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="87.723214285714278"/>
         </tableViewCell>

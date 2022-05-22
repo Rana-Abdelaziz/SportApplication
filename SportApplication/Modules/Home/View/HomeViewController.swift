@@ -15,9 +15,9 @@ class HomeViewController: UIViewController {
     var homePresenter: HomeVCPresenter!
         
     
-    var leagues : [League]?
+//    var leagues : [League]?
 //    var context: NSManagedObjectContext!
-    var coreData: CoreDataServices?
+//    var coreData: CoreDataServices?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +29,16 @@ class HomeViewController: UIViewController {
         homePresenter = HomeVCPresenter(view: self)
         homePresenter.viewDidLoad()
         
-        coreData = CoreDataServices()
+//        coreData = CoreDataServices()
         
-        fetchAllLeagues()
+//        fetchAllLeagues()
         
     }
     
-    func fetchAllLeagues(){
-        leagues = coreData?.fetchAllLeagues()
-        print("league count \(leagues?.count)")
-    }
+//    func fetchAllLeagues(){
+//        leagues = coreData?.fetchAllLeagues()
+//        print("league count \(leagues?.count)")
+//    }
     
 //    func fetchAllLeagues(){
 //        do {

@@ -12,6 +12,8 @@ class LatestResultsCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var homeTeam: UILabel!
     @IBOutlet weak var awayTeam: UILabel!
+    @IBOutlet weak var score: UILabel!
+    @IBOutlet weak var dateAndTime: UILabel!
     static let identifier = "LatestResultsCollectionViewCell"
     
     override func awakeFromNib() {
@@ -34,4 +36,13 @@ class LatestResultsCollectionViewCell: UICollectionViewCell {
         awayTeam.text = strAwayTeam
     }
     
+    // set score
+    func displayScore(intHomeScore: String, intAwayScore: String) {
+        score.text = "\(intHomeScore) : \(intAwayScore)"
+    }
+    
+    // set date and time
+    func displayDateAndTime(dateEventLocal: String, strTimeLocal: String) {
+        dateAndTime.text = "\(dateEventLocal) : \(strTimeLocal)"
+    }
 }

@@ -18,7 +18,7 @@ extension TeamsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
         layout.scrollDirection = .horizontal
         
         let width = collectionView.frame.height
-        layout.itemSize = CGSize(width: 350, height: 250)
+        layout.itemSize = CGSize(width: 250, height: 250)
         
         collectionView.register(TeamsCollectionViewCell.nib(), forCellWithReuseIdentifier: TeamsCollectionViewCell.identifier)
         
@@ -45,7 +45,15 @@ extension TeamsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TeamsCollectionViewCell.identifier, for: indexPath) as! TeamsCollectionViewCell
         
+        
+        
         teamsPresenter.configure(cell: cell, for: indexPath.row)
+        
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 3, height: 3)
+        cell.layer.shadowRadius = 4
+        cell.layer.shadowOpacity = 0.3
+        cell.layer.masksToBounds = false
         
         return cell
     }
@@ -58,7 +66,7 @@ extension TeamsCollectionViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = collectionView.frame.height
-        return CGSize(width: 350, height: 250)
+        return CGSize(width: 250, height: 250)
         
     }
     

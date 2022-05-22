@@ -27,6 +27,15 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
         
         favoritesPresenter.configure(cell: cell, for: indexPath.row)
         
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 3, height: 3)
+        cell.layer.shadowRadius = 4
+        cell.layer.shadowOpacity = 0.3
+        cell.layer.masksToBounds = false
+        
+//        cell.youtubeLink
+//        cell.youtubeLink = leaguesList[indexPath.section].strYoutube ?? ""
+        
         return cell
     }
     

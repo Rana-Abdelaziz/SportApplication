@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TeamsCollectionViewCell: UICollectionViewCell {
     
@@ -26,6 +27,10 @@ class TeamsCollectionViewCell: UICollectionViewCell {
 
     // set team image
     func displayTeamImage(strTeamBadge: String) {
+//        let scale = UIScreen.main.scale
+//        let resizingProcessor = ResizingImageProcessor(referenceSize: CGSize(width: 100.0 * scale, height: 100.0 * scale))
+
+        
         teamImage.kf.setImage(with: URL(string: strTeamBadge), placeholder: UIImage(named: "placeholder.jpeg"), options: nil, progressBlock: nil, completionHandler: nil)
     }
     

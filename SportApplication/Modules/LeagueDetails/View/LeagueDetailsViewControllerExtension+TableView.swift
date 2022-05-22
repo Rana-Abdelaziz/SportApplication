@@ -48,6 +48,24 @@ extension LeagueDetailsViewController: UITableViewDataSource, UITableViewDelegat
         teamsCell.setLeagueName(leagueName: leagueNameWithPercentEncdoing ?? "Albanian%20Superliga")
         //4406
         
+//        latestResultsCell.layer.shadowColor = UIColor.black.cgColor
+//        latestResultsCell.layer.shadowOffset = CGSize(width: 3, height: 3)
+//        latestResultsCell.layer.shadowRadius = 4
+//        latestResultsCell.layer.shadowOpacity = 0.3
+//        latestResultsCell.layer.masksToBounds = false
+//        
+//        upcomingEventsCell.layer.shadowColor = UIColor.black.cgColor
+//        upcomingEventsCell.layer.shadowOffset = CGSize(width: 3, height: 3)
+//        upcomingEventsCell.layer.shadowRadius = 4
+//        upcomingEventsCell.layer.shadowOpacity = 0.3
+//        upcomingEventsCell.layer.masksToBounds = false
+//        
+//        teamsCell.layer.shadowColor = UIColor.black.cgColor
+//        teamsCell.layer.shadowOffset = CGSize(width: 3, height: 3)
+//        teamsCell.layer.shadowRadius = 4
+//        teamsCell.layer.shadowOpacity = 0.3
+//        teamsCell.layer.masksToBounds = false
+        
         teamsCell.didSelectRow = { [weak self] team in
             
             let teamDetailsVC = self?.storyboard?.instantiateViewController(withIdentifier: "TeamDetailsViewController") as! TeamViewController
@@ -79,7 +97,7 @@ extension LeagueDetailsViewController: UITableViewDataSource, UITableViewDelegat
         case 0:
             return 250
         case 1:
-            return 250
+            return 500
         case 2:
             return 250
         default:

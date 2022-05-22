@@ -18,6 +18,8 @@ protocol LatestResultsView: class {
 protocol LatestResultsCellView {
     func displayHomeTeam(strHomeTeam: String)
     func displayAwayTeam(strAwayTeam: String)
+    func displayScore(intHomeScore: String, intAwayScore: String)
+    func displayDateAndTime(dateEventLocal: String, strTimeLocal: String)
 }
 
 
@@ -62,6 +64,8 @@ class LatestResultsPresenter {
         let latestResult = latestResults[index]
         cell.displayHomeTeam(strHomeTeam: latestResult.strHomeTeam ?? "")
         cell.displayAwayTeam(strAwayTeam: latestResult.strAwayTeam ?? "")
+        cell.displayScore(intHomeScore: latestResult.intHomeScore ?? "", intAwayScore: latestResult.intAwayScore ?? "")
+        cell.displayDateAndTime(dateEventLocal: latestResult.dateEventLocal ?? "", strTimeLocal: latestResult.strTimeLocal ?? "")
     }
     
 }

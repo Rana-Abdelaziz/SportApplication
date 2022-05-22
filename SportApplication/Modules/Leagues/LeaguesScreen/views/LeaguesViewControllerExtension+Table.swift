@@ -119,7 +119,7 @@ extension LeaguesViewController : UITableViewDelegate , UITableViewDataSource {
                     try context.save()
                     leagues.remove(at: indexPath.section)
                 } catch {
-                    print("Error deleting todo")
+                    print("Error deleting league")
                 }
                 
                 DispatchQueue.main.async {
