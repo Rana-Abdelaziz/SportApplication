@@ -28,8 +28,8 @@ extension HomeViewController: HomeView {
         collectionView.reloadData()
     }
     
-    func showError() {
-        showAlert()
+    func showError(errorMsg: String) {
+        showAlert(errorMsg)
     }
     
 }

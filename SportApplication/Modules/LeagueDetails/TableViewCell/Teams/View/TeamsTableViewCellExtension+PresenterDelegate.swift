@@ -14,15 +14,15 @@ extension TeamsTableViewCell {
     }
     
     func hideIndicator() {
-        print("showIndicator")
+        print("hideIndicator")
     }
     
     func fetchingDataSuccess() {
-        print("showIndicator")
+        print("fetchingDataSuccess")
         collectionView.reloadData()
     }
     
     func showError() {
-        print("showIndicator")
+        print("Error while loading teams")
     }
 }

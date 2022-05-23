@@ -61,8 +61,7 @@ class CoreDataServices {
         print("League is not in favorites")
         return false
     }
-    
-    
+
     func getLeagueById(leagueId: String) -> League? {
         
         var deletedLeague: League?

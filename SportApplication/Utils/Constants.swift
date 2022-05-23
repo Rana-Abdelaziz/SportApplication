@@ -11,7 +11,7 @@ import Foundation
 struct Constants {
     static let BASE_URL = "https://www.thesportsdb.com/api/v1/json/2/"
     static let END_POINT_ALL_SPORTS = "all_sports.php"
-    static let END_POINT_EVENTS = "eventsseason.php?id="
+    static let END_POINT_EVENTS = "eventsseason.php?"
     static let END_POINT_TEAMS = "search_all_teams.php?l="
 
 }

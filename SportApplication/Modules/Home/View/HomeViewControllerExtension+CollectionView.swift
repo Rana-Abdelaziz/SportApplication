@@ -14,6 +14,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func setupCollectionView(){
         
         if InternetConnectionManager.isConnectedToNetwork() {
+            collectionView.alpha = 1
             let layout = UICollectionViewFlowLayout()
             collectionView.collectionViewLayout = layout
             layout.itemSize = CGSize(width: (self.view.bounds.width - 48) / 2, height: (self.view.bounds.width + 20) / 2)
@@ -26,6 +27,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         } else {
             homePresenter.removeSports()
             collectionView.reloadData()
+            collectionView.alpha = 0
             let imageName = "noConnection.jpeg"
             let image = UIImage(named: imageName)
             let imageView = UIImageView(image: image!)

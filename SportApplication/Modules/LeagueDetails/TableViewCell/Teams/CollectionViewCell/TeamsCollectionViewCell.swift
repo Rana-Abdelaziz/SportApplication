@@ -30,8 +30,17 @@ class TeamsCollectionViewCell: UICollectionViewCell {
 //        let scale = UIScreen.main.scale
 //        let resizingProcessor = ResizingImageProcessor(referenceSize: CGSize(width: 100.0 * scale, height: 100.0 * scale))
 
+        teamImage.layer.borderWidth = 1
+        teamImage.layer.masksToBounds = false
+        teamImage.layer.borderColor = UIColor.black.cgColor
+        teamImage.layer.cornerRadius = teamImage.frame.height/2
+        teamImage.clipsToBounds = true
+        
+//        let processor = RoundCornerImageProcessor(cornerRadius: teamImage.frame.height/2)
         
         teamImage.kf.setImage(with: URL(string: strTeamBadge), placeholder: UIImage(named: "placeholder.jpeg"), options: nil, progressBlock: nil, completionHandler: nil)
+        
+        
     }
     
     // set team name

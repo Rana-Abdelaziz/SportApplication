@@ -23,7 +23,8 @@ protocol UpcomingEventsCellView {
 class UpcomingEventsPresenter {
     
     private weak var view: UpcomingEventsView?
-    private let interactor = UpcomingEventsInteractor(baseUrl: Constants.BASE_URL)
+//    private let interactor = UpcomingEventsInteractor(baseUrl: Constants.BASE_URL)
+    let upcomingEventsAPI: UpcomingEventsAPIProtocol = UpcomingEventsAPI()
     private var upcomingEvents = [Event]()
     
     init(view: UpcomingEventsView) {
@@ -32,21 +33,39 @@ class UpcomingEventsPresenter {
     
     func getUpcomingEvents(leagueId: String){
         view?.showIndicator()
-        interactor.getUpcomingEvents(endPoint: Constants.END_POINT_EVENTS + leagueId, completionHandler: { [weak self] upcomingEvents, error in
-
-            guard let self = self else { return }
-            self.view?.hideIndicator()
-
-            if let error = error {
-                self.view?.showError()
-            } else {
-                guard let upcomingEvents = upcomingEvents else { return }
-                self.upcomingEvents = upcomingEvents.events
-                print("UpcomingEvents Completion handler success \(self.upcomingEvents.count)")
-                self.view?.fetchingDataSuccess()
+        upcomingEventsAPI.getUpcomingEvents(leagueId: leagueId, completion: { [weak self] (result) in
+            switch result {
+            case .success(let response):
+                self?.upcomingEvents = response?.events ?? []
+                self?.view?.hideIndicator()
+                self?.view?.fetchingDataSuccess()
+                
+            case .failure(let error):
+                // Show UI Error
+                self?.view?.hideIndicator()
+                self?.view?.showError()
             }
+            
         })
     }
+    
+//    func getUpcomingEvents(leagueId: String){
+//        view?.showIndicator()
+//        interactor.getUpcomingEvents(endPoint: Constants.END_POINT_EVENTS + leagueId, completionHandler: { [weak self] upcomingEvents, error in
+//
+//            guard let self = self else { return }
+//            self.view?.hideIndicator()
+//
+//            if let error = error {
+//                self.view?.showError()
+//            } else {
+//                guard let upcomingEvents = upcomingEvents else { return }
+//                self.upcomingEvents = upcomingEvents.events
+//                print("UpcomingEvents Completion handler success \(self.upcomingEvents.count)")
+//                self.view?.fetchingDataSuccess()
+//            }
+//        })
+//    }
     
     func getUpcomingEventsCount() -> Int {
         return upcomingEvents.count

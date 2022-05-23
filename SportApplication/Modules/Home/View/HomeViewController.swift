@@ -15,10 +15,27 @@ class HomeViewController: UIViewController {
     var homePresenter: HomeVCPresenter!
     let indicator = UIActivityIndicatorView(style: .medium)
     
+    let api: HomeAPIProtocol = HomeAPI()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         homePresenter = HomeVCPresenter(view: self)
+        
+        api.getAllSports { (result) in
+            switch result {
+            case .success(let response):
+                let sports = response?.sports
+                for sport in sports ?? [] {
+                    print("sport name: \(sport.strSport ?? "")")
+                }
+            case .failure(let error):
+                // Show UI Error
+                print(error.userInfo[NSLocalizedDescriptionKey] as? String ?? "Unknown Error")
+            }
+            
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -26,10 +43,9 @@ class HomeViewController: UIViewController {
         homePresenter.viewDidLoad()
     }
     
-    func showAlert(){
-        
-        let alert : UIAlertController = UIAlertController(title: "Error", message: "Something wrong happend while trying to get your data!", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+    func showAlert(_ errorMsg: String){
+        let alert : UIAlertController = UIAlertController(title: "Error", message: errorMsg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         
         present(alert,animated: true,completion: nil)
     }

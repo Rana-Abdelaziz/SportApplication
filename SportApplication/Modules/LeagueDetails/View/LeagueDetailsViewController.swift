@@ -19,15 +19,12 @@ class LeagueDetailsViewController: UIViewController {
     
     @IBOutlet weak var btnAddRemove: UIButton!
     
-//    var coreData: CoreDataServices?
     let coreData = CoreDataServices.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
-        
-//        coreData = CoreDataServices()
         settingUpAddRemoveButton()
         
         print("selected leagueId \(leagueId) name : \(leagueName)")
@@ -53,7 +50,6 @@ class LeagueDetailsViewController: UIViewController {
     func settingUpAddRemoveButton() {
         var isInFavs: Bool?
         isInFavs = coreData.checkIfLeagueInFavorites(leagueId: leagueId ?? "")
-        print("is in Favs \(isInFavs)")
         
         if isInFavs ?? false {
             btnAddRemove.setTitle("Remove -", for: .normal)
@@ -63,10 +59,6 @@ class LeagueDetailsViewController: UIViewController {
     }
     
     @IBAction func actionAddRemoveFav(_ sender: UIButton) {
-        
-//        var isInFavs: Bool?
-//        isInFavs = coreData.checkIfLeagueInFavorites(leagueId: leagueId ?? "")
-//        print("is in Favs \(isInFavs)")
         
         if btnAddRemove.titleLabel?.text == "Add +" {
             

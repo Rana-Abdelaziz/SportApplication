@@ -42,11 +42,10 @@ extension LeagueDetailsViewController: UITableViewDataSource, UITableViewDelegat
 //        latestResultsCell.setLeagueId(leagueId: "4617")
 //        teamsCell.setLeagueName(leagueName: "Albanian%20Superliga")
         
-        upcomingEventsCell.setLeagueId(leagueId: leagueId ?? "4406")
-        latestResultsCell.setLeagueId(leagueId: leagueId ?? "4617")
-        let leagueNameWithPercentEncdoing = leagueName?.replacingOccurrences(of: " ", with: "%20")
-        teamsCell.setLeagueName(leagueName: leagueNameWithPercentEncdoing ?? "Albanian%20Superliga")
-        //4406
+        upcomingEventsCell.setLeagueId(leagueId: leagueId ?? "")
+        latestResultsCell.setLeagueId(leagueId: leagueId ?? "")
+        let leagueNameWithPercentEncoding = leagueName?.replacingOccurrences(of: " ", with: "%20")
+        teamsCell.setLeagueName(leagueName: leagueNameWithPercentEncoding ?? "")
         
 //        latestResultsCell.layer.shadowColor = UIColor.black.cgColor
 //        latestResultsCell.layer.shadowOffset = CGSize(width: 3, height: 3)
@@ -85,10 +84,6 @@ extension LeagueDetailsViewController: UITableViewDataSource, UITableViewDelegat
             return upcomingEventsCell
         }
         
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("didSelectRowAt: \(indexPath.row)")
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

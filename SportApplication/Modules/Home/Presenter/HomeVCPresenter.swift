@@ -12,7 +12,7 @@ protocol HomeView: class {
     func showIndicator()
     func hideIndicator()
     func fetchingDataSuccess()
-    func showError()
+    func showError(errorMsg: String)
 }
 
 protocol HomeCellView {
@@ -23,7 +23,8 @@ protocol HomeCellView {
 class HomeVCPresenter {
     
     private weak var view: HomeView?
-    private let interactor = HomeInteractor(baseUrl: "https://www.thesportsdb.com/api/v1/json/2/")
+//    private let interactor = HomeInteractor(baseUrl: "https://www.thesportsdb.com/api/v1/json/2/")
+    let homeApi: HomeAPIProtocol = HomeAPI()
     private var sports = [Sport]()
     
     init(view: HomeView) {
@@ -36,24 +37,42 @@ class HomeVCPresenter {
     
     func getSports(){
         view?.showIndicator()
-        interactor.getSports(endPoint: Constants.END_POINT_ALL_SPORTS, completionHandler: { [weak self] sports, error in
-
-            print("Completion handler ")
-
-            guard let self = self else { return }
-            self.view?.hideIndicator()
-
-            if let error = error {
-                self.view?.showError()
-            } else {
-                guard let sports = sports else { return }
-                self.sports = sports.sports
-                print("Completion handler success \(self.sports.count)")
-                print("git")
-                self.view?.fetchingDataSuccess()
+        homeApi.getAllSports { [weak self] (result) in
+            switch result {
+            case .success(let response):
+                self?.sports = response?.sports ?? []
+                self?.view?.hideIndicator()
+                self?.view?.fetchingDataSuccess()
+                
+            case .failure(let error):
+                // Show UI Error
+                self?.view?.hideIndicator()
+                self?.view?.showError(errorMsg: error.userInfo[NSLocalizedDescriptionKey] as? String ?? "Unknown Error")
             }
-        })
+            
+        }
     }
+    
+//    func getSports(){
+//        view?.showIndicator()
+//        interactor.getSports(endPoint: Constants.END_POINT_ALL_SPORTS, completionHandler: { [weak self] sports, error in
+//
+//            print("Completion handler ")
+//
+//            guard let self = self else { return }
+//            self.view?.hideIndicator()
+//
+//            if let error = error {
+//                self.view?.showError()
+//            } else {
+//                guard let sports = sports else { return }
+//                self.sports = sports.sports
+//                print("Completion handler success \(self.sports.count)")
+//                print("git")
+//                self.view?.fetchingDataSuccess()
+//            }
+//        })
+//    }
     
     func getSportsCount() -> Int {
         return sports.count
