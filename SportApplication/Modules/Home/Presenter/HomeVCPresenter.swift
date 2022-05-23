@@ -36,7 +36,7 @@ class HomeVCPresenter {
     
     func getSports(){
         view?.showIndicator()
-        interactor.getSports(endPoint: "all_sports.php", completionHandler: { [weak self] sports, error in
+        interactor.getSports(endPoint: Constants.END_POINT_ALL_SPORTS, completionHandler: { [weak self] sports, error in
 
             print("Completion handler ")
 

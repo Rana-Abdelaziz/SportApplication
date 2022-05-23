@@ -77,6 +77,7 @@
 		BC205DD128334860001A771F /* TeamsPresetnerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC205DD028334860001A771F /* TeamsPresetnerProtocols.swift */; };
 		BC66900D2835AD87001D016E /* League+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66900B2835AD87001D016E /* League+CoreDataProperties.swift */; };
 		BC66900E2835AD87001D016E /* League+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66900C2835AD87001D016E /* League+CoreDataClass.swift */; };
+		BCA71963283AE8F600AACE48 /* NetworkServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA71962283AE8F600AACE48 /* NetworkServicesTests.swift */; };
 		BCCFA52B2836CF2E00FD4291 /* CoreDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFA52A2836CF2E00FD4291 /* CoreDataServices.swift */; };
 		BCE4E4F428373A9600C528B0 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4E4F328373A9600C528B0 /* FavoritesViewController.swift */; };
 		BCE4E4F6283740C400C528B0 /* FavoritesViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4E4F5283740C400C528B0 /* FavoritesViewController+TableView.swift */; };
@@ -184,6 +185,7 @@
 		BC205DD028334860001A771F /* TeamsPresetnerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsPresetnerProtocols.swift; sourceTree = "<group>"; };
 		BC66900B2835AD87001D016E /* League+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "League+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BC66900C2835AD87001D016E /* League+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "League+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BCA71962283AE8F600AACE48 /* NetworkServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServicesTests.swift; sourceTree = "<group>"; };
 		BCCFA52A2836CF2E00FD4291 /* CoreDataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServices.swift; sourceTree = "<group>"; };
 		BCE4E4F328373A9600C528B0 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		BCE4E4F5283740C400C528B0 /* FavoritesViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesViewController+TableView.swift"; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 		25DFB884282BEC6C00BE87A6 /* SportApplicationTests */ = {
 			isa = PBXGroup;
 			children = (
+				BCA71962283AE8F600AACE48 /* NetworkServicesTests.swift */,
 				25DFB885282BEC6C00BE87A6 /* SportApplicationTests.swift */,
 				25DFB887282BEC6C00BE87A6 /* Info.plist */,
 			);
@@ -1019,6 +1022,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCA71963283AE8F600AACE48 /* NetworkServicesTests.swift in Sources */,
 				25DFB886282BEC6C00BE87A6 /* SportApplicationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
