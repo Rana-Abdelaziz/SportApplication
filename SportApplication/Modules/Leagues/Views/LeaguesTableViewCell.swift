@@ -14,7 +14,6 @@ class LeaguesTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var logoImage: UIImageView!
     var youtubeLink:String = ""
-    //var controller:LeaguesViewController = LeaguesViewController()
     
     @IBAction func goToYoutube(_ sender: Any) {
       let youtubeId = "SxTYjptEzZs"

@@ -12,78 +12,37 @@ import CoreData
 import Network
 
 
-class LeaguesViewController: UIViewController {
+class LeaguesViewController: UIViewController , LeaguesTableViewProtocol{
   
-    var leagues : [League] = []
-    var context: NSManagedObjectContext!
-      
+  
+  let indicator = UIActivityIndicatorView(style: .medium)
    var sportName="Soccer"
     var flag = "all"
     var leaguesList:[LeaguesModel] = []
     var leaguesPresenter:LeaguesProtocol?
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var contextView :NSManagedObjectContext?
-    var moviesForDataBase:[NSManagedObject]=[]
-    let monitor = NWPathMonitor()
+
     @IBOutlet weak var tableView : UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        context = appDelegate.persistentContainer.viewContext
-        
+        setup()
         leaguesPresenter = LeaguesPresenter()
-        let connectionState = InternetConnectionManager.isConnectedToNetwork()
-        print("connection",connectionState)
-        if connectionState {
-            tableView.isHidden = false
-            setup()
-            print("state is",connectionState)
-            if flag == "all"{
-                print(flag)
-                let myUrl = "https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?s="
-                leaguesPresenter?.getLeagues(parameters: sportName ,url: myUrl, completionHandler: { [weak self] leagues, error in
-                    print("Completion handler ")
-                    if let error = error {
-                        print(error)
-                    } else {
-                        guard let resualt = leagues else { return }
-                        self?.leaguesList = resualt.countries ?? []
-                        self!.tableView.reloadData()
-                        print(resualt)
-                        
-                       
-                    }
-                })
-            }else{
-                print(flag)
-                print("Favorite")
-                fetchAllLeagues()
-                
-                print("favorite ", leagues.count)
-//                    self.contextView = self.appDelegate.persistentContainer.viewContext
-//                        // update it with database name
-//                        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Movie")
-//                        do{
-//                          self.moviesForDataBase = try (self.contextView?.fetch(fetchRequest))!
-//                           print("fetched")
-//                        }catch{
-//                            print("Error while Fetching")
-//                        }
-                        
-            }
-            
-        }else{
-            tableView.isHidden = true
-            let width = UIScreen.main.bounds.size.width
-            let height = UIScreen.main.bounds.size.height
-            let imageViewBackground = UIImageView(frame: CGRect(x:0, y:0, width: width, height: height))
-            imageViewBackground.image = UIImage(named: "noConnection.jpg")
-            imageViewBackground.contentMode = UIView.ContentMode.scaleAspectFit
-            self.view.addSubview(imageViewBackground)
-            self.view.sendSubviewToBack(imageViewBackground)
-            
-        }
+        let myUrl = "https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?s="
+        leaguesPresenter?.getLeagues(parameters: sportName, url: myUrl)
+        indicator.startAnimating()
+        let pre = LeaguesPresenter()
+        pre.getLeaguess(parameters: sportName ,url: myUrl, completionHandler: { [weak self] leagues, error in
+                         print("Completion handler ")
+                         if let error = error {
+                             print(error)
+                         } else {
+                             guard let resualt = leagues else { return }
+                             self?.leaguesList = resualt.countries ?? []
+                             self!.tableView.reloadData()
+                             print(resualt)
+
+
+                         }
+                     })
         
         
       
@@ -93,26 +52,24 @@ class LeaguesViewController: UIViewController {
     
     
     
-    
-
-
-    func showAlert(){
-       let alert : UIAlertController = UIAlertController(title: "warning", message: "Sorry but this League has no video on Youtube", preferredStyle: .actionSheet)
-                alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
-        present(alert,animated: true,completion: nil)
-    }
-    
-    
- 
-    
-    func fetchAllLeagues(){
-         do {
-             leagues = try context.fetch(League.fetchRequest())
-            print("league count \(leagues.count)")
-         } catch {
-             print("Error fetching todos")
+    func DispalyData(myLeagues: LeaguesResualt?, error: Error?) {
+         print("inside DisplayData")
+        indicator.stopAnimating()
+         guard let leagues = myLeagues else {
+             print(error)
+             return
          }
+         self.leaguesList = leagues.countries ?? []
+        print(leaguesList[0].strLeague)
+         //tableView.reloadData()
+         print(leagues.countries![0].strLeague)
+         
      }
+    
+
+
+    
+
     
 
  

@@ -8,9 +8,26 @@
 
 import Foundation
 
-class LeaguesPresenter:LeaguesProtocol{
-
-    func getLeagues(parameters:String,url:String,completionHandler: @escaping (LeaguesResualt?, Error?) -> ()){
+class LeaguesPresenter : LeaguesProtocol{
+    
+    let leaguesView: LeaguesTableViewProtocol = LeaguesViewController()
+    func getLeagues(parameters: String,url:String) {
+        let network = LeaguesNetworkManager(baseUrl: url)
+                network.getLeagues(param: parameters,completionHandler: {[weak self] leagues, error in
+                    guard let self = self else{return}
+                    
+                 if let myError = error {
+                     print(error)
+                    self.leaguesView.DispalyData(myLeagues: nil,error:myError)
+                 } else {
+                     guard let resualt = leagues else { return }
+                    self.leaguesView.DispalyData(myLeagues: resualt,error:nil)
+                 }
+             })
+        
+    }
+    
+    func getLeaguess(parameters:String,url:String,completionHandler: @escaping (LeaguesResualt?, Error?) -> ()){
         let network = LeaguesNetworkManager(baseUrl: url)
         network.getLeagues(param: parameters,completionHandler: { leagues, error in
 
@@ -22,9 +39,10 @@ class LeaguesPresenter:LeaguesProtocol{
             completionHandler(resualt,nil)
          }
      })
-        
+
     }
 }
 protocol LeaguesProtocol {
-    func getLeagues(parameters:String,url:String,completionHandler: @escaping (LeaguesResualt?, Error?) -> ())
+    func getLeagues(parameters: String,url:String)
+   // func getLeagues(parameters:String,url:String,completionHandler: @escaping (LeaguesResualt?, Error?) -> ())
 }

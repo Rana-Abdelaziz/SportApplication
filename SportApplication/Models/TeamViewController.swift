@@ -27,25 +27,18 @@ class TeamViewController: UIViewController {
         
         
         super.viewDidLoad()
-        presnter.getTeams(url: "https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=English%20Premier%20League") { (TeamsResualt, Error) in
-            guard let r = TeamsResualt else{
-                print(Error ?? "Error fetching teams")
-                return
-            }
-//            self.team = r.teams![0]
-            self.teamName.text = self.team.strTeam
-            self.countryName.text = self.team.strCountry
-            self.stadiumName.text = self.team.strStadium
-            self.leagueName.text = self.team.strLeague
-            self.teamImg.layer.cornerRadius = self.teamImg.frame.size.width/2
-            self.teamImg.clipsToBounds = true
-            self.teamImg.kf.setImage(with: URL(string: self.team.strTeamBadge!), placeholder: UIImage(named: "youtube.png"), options: nil, progressBlock: nil, completionHandler: nil)
-            
-            self.backgroundImg.kf.setImage(with: URL(string: self.team.strStadiumThumb ?? ""), placeholder: UIImage(named: "placeholder.jpeg"), options: nil, progressBlock: nil, completionHandler: nil)
-            self.teamTshirtImg.kf.setImage(with: URL(string: self.team.strTeamJersey ?? ""), placeholder: UIImage(named: "placeholder.jpeg"), options: nil, progressBlock: nil, completionHandler: nil)
-            print(r.teams)
-            
-        }
+        
+                   self.teamName.text = self.team.strTeam
+                   self.countryName.text = self.team.strCountry
+                   self.stadiumName.text = self.team.strStadium
+                   self.leagueName.text = self.team.strLeague
+                   self.teamImg.layer.cornerRadius = self.teamImg.frame.size.width/2
+                   self.teamImg.clipsToBounds = true
+                   self.teamImg.kf.setImage(with: URL(string: self.team.strTeamBadge!), placeholder: UIImage(named: "youtube.png"), options: nil, progressBlock: nil, completionHandler: nil)
+                   
+                   self.backgroundImg.kf.setImage(with: URL(string: self.team.strStadiumThumb ?? ""), placeholder: UIImage(named: "placeholder.jpeg"), options: nil, progressBlock: nil, completionHandler: nil)
+                   self.teamTshirtImg.kf.setImage(with: URL(string: self.team.strTeamJersey ?? ""), placeholder: UIImage(named: "placeholder.jpeg"), options: nil, progressBlock: nil, completionHandler: nil)
+        
         // Do any additional setup after loading the view.
     }
     
@@ -55,40 +48,18 @@ class TeamViewController: UIViewController {
         self.dismiss(animated: true)
      }
      @IBAction func instagramBtn(_ sender: Any) {
-         let instagramUrl = NSURL(string:"https://"+team.strInstagram!+"/")
-                 if UIApplication.shared.canOpenURL(instagramUrl! as URL) {
-                     UIApplication.shared.openURL(instagramUrl! as URL)
-                 } else {
-                     UIApplication.shared.openURL(NSURL(string: "https://www.instagram.com/"
-         )! as URL)
-                 }
+        presnter.gotoInstgram(url: team.strInstagram!)
+        
      }
      @IBAction func websiteBtn(_ sender: Any) {
-         let websiteUrl = NSURL(string: "http://"+team.strWebsite!)
-             
-             if UIApplication.shared.canOpenURL(websiteUrl! as URL) {
-                 UIApplication.shared.openURL(websiteUrl! as URL)
-             } else {
-                 UIApplication.shared.openURL(NSURL(string: "http://google.com/")! as URL)
-             }
-         
+        presnter.gotoWebSite(url:team.strWebsite!)
      }
      @IBAction func twitterBtn(_ sender: Any) {
-         let twitterUrl = NSURL(string: "https://"+team.strTwitter!)
-         if UIApplication.shared.canOpenURL(twitterUrl! as URL) {
-             UIApplication.shared.openURL(twitterUrl! as URL)
-         } else {
-             UIApplication.shared.openURL(NSURL(string: "https://twitter.com/")! as URL)
-         }
+        presnter.gotoTwiter(url:team.strTwitter!)
          
      }
      @IBAction func faceBookBtn(_ sender: Any) {
-         let facebookUrl = NSURL(string: "https://"+team.strFacebook!)
-         if UIApplication.shared.canOpenURL(facebookUrl! as URL) {
-             UIApplication.shared.openURL(facebookUrl! as URL)
-         } else {
-             UIApplication.shared.openURL(NSURL(string: "http://facebook.com/")! as URL)
-         }
+        presnter.gotoFaceBook(url: team.strFacebook!)
          
      }
     
