@@ -18,7 +18,7 @@ extension TeamsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
         layout.scrollDirection = .horizontal
         
         let width = collectionView.frame.height
-        layout.itemSize = CGSize(width: 250, height: 250)
+        layout.itemSize = CGSize(width: 150, height: 150)
         
         collectionView.register(TeamsCollectionViewCell.nib(), forCellWithReuseIdentifier: TeamsCollectionViewCell.identifier)
         
@@ -64,7 +64,7 @@ extension TeamsCollectionViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = collectionView.frame.height
-        return CGSize(width: 250, height: 250)
+        return CGSize(width: 150, height: 150)
         
     }
     
