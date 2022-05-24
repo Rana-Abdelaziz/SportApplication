@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toaster
 
 class LeaguesTableViewCell: UITableViewCell {
 
@@ -27,11 +28,10 @@ class LeaguesTableViewCell: UITableViewCell {
         if((myUrl) != ""){
             let youtubeUrl = NSURL(string:"https://"+myUrl)!
             UIApplication.shared.openURL(youtubeUrl as URL)
+        } else {
+            Toast(text: "This league has no youtube channel").show()
         }
-//        else{
-//            controller.showAlert()
-//        }
-//
+
       }
         
     }
