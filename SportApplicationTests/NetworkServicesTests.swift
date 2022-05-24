@@ -73,7 +73,7 @@ class NetworkServicesTests: XCTestCase {
     
     func testGetLeagueTeams(){
         let expectation = expectation(description: "Waiting league teams")
-        leagueTeamsAPI.getLeagueTeams(leagueName: "Albanian%20Superliga") { result in
+        leagueTeamsAPI.getLeagueTeams(leagueName: "Albanian Superliga") { result in
             switch result {
             case .success(let teams):
                 XCTAssertNotNil(teams)

@@ -14,5 +14,6 @@ struct Constants {
     static let END_POINT_EVENTS = "eventsseason.php?"
     static let END_POINT_TEAMS = "search_all_teams.php?"
     static let END_POINT_TEAMS2 = "search_all_teams.php?l="
+    static let END_POINT_LEAGUES = "search_all_leagues.php?"
 
 }
