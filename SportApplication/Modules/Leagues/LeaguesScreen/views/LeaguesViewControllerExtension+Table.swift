@@ -11,7 +11,7 @@ import UIKit
 
 
 extension LeaguesViewController : UITableViewDelegate , UITableViewDataSource {
-         
+    
     func setup(){
         tableView.delegate = self
         tableView.dataSource = self
@@ -21,7 +21,7 @@ extension LeaguesViewController : UITableViewDelegate , UITableViewDataSource {
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-                   return leaguesList.count
+        return leaguesList.count
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,10 +31,10 @@ extension LeaguesViewController : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let leagueDetailsViewController = storyboard?.instantiateViewController(withIdentifier: "LeaguesDetailsViewController") as! LeagueDetailsViewController
-                leagueDetailsViewController.leagueId = leaguesList[indexPath.section].idLeague
-                leagueDetailsViewController.leagueName = leaguesList[indexPath.section].strLeague
-                leagueDetailsViewController.leagueBadge = leaguesList[indexPath.section].strBadge
-                leagueDetailsViewController.leagueYoutubeLink = leaguesList[indexPath.section].strYoutube
+        leagueDetailsViewController.leagueId = leaguesList[indexPath.section].idLeague
+        leagueDetailsViewController.leagueName = leaguesList[indexPath.section].strLeague
+        leagueDetailsViewController.leagueBadge = leaguesList[indexPath.section].strBadge
+        leagueDetailsViewController.leagueYoutubeLink = leaguesList[indexPath.section].strYoutube
         
         
         self.navigationController?.pushViewController(leagueDetailsViewController, animated: true)
@@ -45,20 +45,20 @@ extension LeaguesViewController : UITableViewDelegate , UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LeaguesTableViewCell", for: indexPath) as! LeaguesTableViewCell
         
         
-          cell.title.text = leaguesList[indexPath.section].strLeague
-                cell.layer.shadowColor = UIColor.black.cgColor
-                     cell.layer.shadowOffset = CGSize(width: 3, height: 3)
-                     cell.layer.shadowRadius = 4
-                     cell.layer.shadowOpacity = 0.3
-                     cell.layer.masksToBounds = false
-                 cell.layer.cornerRadius = 15
-                 if leaguesList[indexPath.section].strYoutube == ""{
-                 }else{
-                     cell.youtubeLink = leaguesList[indexPath.section].strYoutube ?? ""
-                 }
-                 
-                 let url = leaguesList[indexPath.section].strBadge
-                 cell.logoImage.kf.setImage(with: URL(string: url!), placeholder: UIImage(named: "youtube.png"), options: nil, progressBlock: nil, completionHandler: nil)
+        cell.title.text = leaguesList[indexPath.section].strLeague
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 3, height: 3)
+        cell.layer.shadowRadius = 4
+        cell.layer.shadowOpacity = 0.3
+        cell.layer.masksToBounds = false
+        cell.layer.cornerRadius = 15
+        if leaguesList[indexPath.section].strYoutube == ""{
+        }else{
+            cell.youtubeLink = leaguesList[indexPath.section].strYoutube ?? ""
+        }
+        
+        let url = leaguesList[indexPath.section].strBadge
+        cell.logoImage.kf.setImage(with: URL(string: url!), placeholder: UIImage(named: "youtube.png"), options: nil, progressBlock: nil, completionHandler: nil)
         
         return cell
     }
@@ -67,9 +67,5 @@ extension LeaguesViewController : UITableViewDelegate , UITableViewDataSource {
         return 10
     }
     
-
-    
-    
-
     
 }

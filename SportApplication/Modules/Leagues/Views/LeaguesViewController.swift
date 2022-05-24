@@ -28,29 +28,23 @@ class LeaguesViewController: UIViewController , LeaguesTableViewProtocol{
         leaguesPresenter = LeaguesPresenter()
         let myUrl = "https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?s="
         leaguesPresenter?.getLeagues(parameters: sportName, url: myUrl)
+        //        leaguesPresenter?.getLeagues(sportName: sportName)
         indicator.startAnimating()
         let pre = LeaguesPresenter()
         pre.getLeaguess(parameters: sportName ,url: myUrl, completionHandler: { [weak self] leagues, error in
-                         print("Completion handler ")
-                         if let error = error {
-                             print(error)
-                         } else {
-                             guard let resualt = leagues else { return }
-                             self?.leaguesList = resualt.countries ?? []
-                             self!.tableView.reloadData()
-                             print(resualt)
-
-
-                         }
-                     })
-        
-        
-      
+            print("Completion handler ")
+            if let error = error {
+                print(error)
+            } else {
+                guard let resualt = leagues else { return }
+                self?.leaguesList = resualt.countries ?? []
+                self!.tableView.reloadData()
+                print(resualt)
+                
+            }
+        })
 
     }
-    
-    
-    
     
     func DispalyData(myLeagues: LeaguesResualt?, error: Error?) {
          print("inside DisplayData")
@@ -61,13 +55,21 @@ class LeaguesViewController: UIViewController , LeaguesTableViewProtocol{
          }
          self.leaguesList = leagues.countries ?? []
         print(leaguesList[0].strLeague)
-         //tableView.reloadData()
+//        DispatchQueue.main.async {
+//            self.tableView.reloadData()
+//        }
+//        tableView.reloadData()
          print(leagues.countries![0].strLeague)
-         
+
      }
     
 
-
+//    func reloadTable(myLeagues: [LeaguesModel]){
+////        leaguesList =
+////        tableView.reloadData()
+//        leaguesList = myLeagues
+//        tableView.reloadData()
+//    }
     
 
     

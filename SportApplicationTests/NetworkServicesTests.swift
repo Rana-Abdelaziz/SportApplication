@@ -13,9 +13,11 @@ import XCTest
 class NetworkServicesTests: XCTestCase {
     
     let homeAPI: HomeAPIProtocol = HomeAPI()
+//    let leaguesAPI: LeaguesAPIProtocol = LeaguesAPI()
     let latestEventsAPI: LatestEventsAPIProtocol = LatestEventsAPI()
     let upcomingEventsAPI: UpcomingEventsAPIProtocol = UpcomingEventsAPI()
     let leagueTeamsAPI: LeagueTeamsAPIProtocol = LeagueTeamsAPI()
+    let leaguesAPI = LeaguesNetworkManager(baseUrl: "https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?s=")
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -40,6 +42,21 @@ class NetworkServicesTests: XCTestCase {
         }
         waitForExpectations(timeout: 10, handler: nil)
     }
+    
+//    func testGetLeagues(){
+//        let expectation = expectation(description: "Waiting for leagues")
+//        leaguesAPI.getLeagues(sportName: "Soccer") { result in
+//            switch result {
+//            case .success(let leagues):
+//                XCTAssertNotNil(leagues)
+//                expectation.fulfill()
+//            case .failure(_):
+//                XCTFail()
+//                expectation.fulfill()
+//            }
+//        }
+//        waitForExpectations(timeout: 10, handler: nil)
+//    }
     
     func testGetLatestEvents(){
         let expectation = expectation(description: "Waiting latest events")
@@ -83,6 +100,24 @@ class NetworkServicesTests: XCTestCase {
                 expectation.fulfill()
             }
         }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    func testGetLeagues(){
+        let expectation = expectation(description: "Waiting leagues")
+        leaguesAPI.getLeagues(param: "Soccer") { result, error in
+            
+            if let error = error {
+                
+                XCTFail()
+                expectation.fulfill()
+            } else {
+                XCTAssertNotNil(result)
+                expectation.fulfill()
+            }
+            
+        }
+        
         waitForExpectations(timeout: 10, handler: nil)
     }
 

@@ -9,4 +9,5 @@
 import Foundation
 protocol LeaguesTableViewProtocol {
     func DispalyData(myLeagues:LeaguesResualt?, error:Error?)
+//    func reloadTable(myLeagues: [LeaguesModel])
 }
