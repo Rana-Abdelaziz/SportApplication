@@ -44,8 +44,9 @@ extension LeagueDetailsViewController: UITableViewDataSource, UITableViewDelegat
         
         upcomingEventsCell.setLeagueId(leagueId: leagueId ?? "")
         latestResultsCell.setLeagueId(leagueId: leagueId ?? "")
-        let leagueNameWithPercentEncoding = leagueName?.replacingOccurrences(of: " ", with: "%20")
-        teamsCell.setLeagueName(leagueName: leagueNameWithPercentEncoding ?? "")
+        teamsCell.setLeagueName(leagueName: leagueName ?? "")
+//        let leagueNameWithPercentEncoding = leagueName?.replacingOccurrences(of: " ", with: "%20")
+//        teamsCell.setLeagueName(leagueName: leagueNameWithPercentEncoding ?? "")
         
 //        latestResultsCell.layer.shadowColor = UIColor.black.cgColor
 //        latestResultsCell.layer.shadowOffset = CGSize(width: 3, height: 3)

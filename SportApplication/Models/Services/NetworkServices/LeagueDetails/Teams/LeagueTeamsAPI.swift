@@ -9,15 +9,15 @@
 import Foundation
 
 protocol LeagueTeamsAPIProtocol {
-    func getLeagueTeams(leagueName: String, completion: @escaping(Result<TeamsResult?, NSError>) -> Void)
+    func getLeagueTeams(leagueName: String, completion: @escaping(Result<TeamsResualt?, NSError>) -> Void)
 }
-
+ 
 class LeagueTeamsAPI: BaseAPI<LeagueTeamsNetworking>, LeagueTeamsAPIProtocol {
     
     // MARK: Requests
     
-    func getLeagueTeams(leagueName: String, completion: @escaping(Result<TeamsResult?, NSError>) -> Void){
-        self.fetchData(target: .getLeagueTeams(leagueName: leagueName), responseClass: TeamsResult.self) { (result) in
+    func getLeagueTeams(leagueName: String, completion: @escaping(Result<TeamsResualt?, NSError>) -> Void){
+        self.fetchData(target: .getLeagueTeams(leagueName: leagueName), responseClass: TeamsResualt.self) { (result) in
             completion(result)
         }
     }
