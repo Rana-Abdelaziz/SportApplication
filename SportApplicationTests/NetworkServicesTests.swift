@@ -11,9 +11,11 @@ import XCTest
 
 
 class NetworkServicesTests: XCTestCase {
-
-//    let leaguesNetworkServices = LeaguesNetworkManager(baseUrl: Constants.BASE_URL)
-    let homeNetworkServices = HomeInteractor(baseUrl: Constants.BASE_URL)
+    
+    let homeAPI: HomeAPIProtocol = HomeAPI()
+    let latestEventsAPI: LatestEventsAPIProtocol = LatestEventsAPI()
+    let upcomingEventsAPI: UpcomingEventsAPIProtocol = UpcomingEventsAPI()
+    let leagueTeamsAPI: LeagueTeamsAPIProtocol = LeagueTeamsAPI()
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,20 +24,66 @@ class NetworkServicesTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func testGetSports(){
-        let expectaion = expectation(description: "Waiting All Sports")
-        homeNetworkServices.getSports(endPoint: Constants.END_POINT_ALL_SPORTS) { sports, error in
-            guard let sports = sports else {
+        let expectation = expectation(description: "Waiting All Sports")
+        homeAPI.getAllSports { result in
+            switch result {
+            case .success(let sports):
+//                XCTAssertEqual(response?.sports.count, 34)
+                XCTAssertNotNil(sports)
+                expectation.fulfill()
+            case .failure(_):
                 XCTFail()
-                expectaion.fulfill()
-                return
+                expectation.fulfill()
             }
-            XCTAssertEqual(sports.sports.count, 34, "API call failed")
-            expectaion.fulfill()
-
         }
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    func testGetLatestEvents(){
+        let expectation = expectation(description: "Waiting latest events")
+        latestEventsAPI.getLatestEvents(leagueId: "4617") { result in
+            switch result {
+            case .success(let events):
+                XCTAssertNotNil(events)
+                expectation.fulfill()
+            case .failure(_):
+                XCTFail()
+                expectation.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    func testGetUpcomingEvents(){
+        let expectation = expectation(description: "Waiting upcoming events")
+        upcomingEventsAPI.getUpcomingEvents(leagueId: "4617") { result in
+            switch result {
+            case .success(let events):
+                XCTAssertNotNil(events)
+                expectation.fulfill()
+            case .failure(_):
+                XCTFail()
+                expectation.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    func testGetLeagueTeams(){
+        let expectation = expectation(description: "Waiting league teams")
+        leagueTeamsAPI.getLeagueTeams(leagueName: "Albanian%20Superliga") { result in
+            switch result {
+            case .success(let teams):
+                XCTAssertNotNil(teams)
+                expectation.fulfill()
+            case .failure(_):
+                XCTFail()
+                expectation.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 10, handler: nil)
     }
 
 }

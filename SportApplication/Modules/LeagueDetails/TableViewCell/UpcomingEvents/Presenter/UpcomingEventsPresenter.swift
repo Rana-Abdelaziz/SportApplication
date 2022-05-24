@@ -23,7 +23,6 @@ protocol UpcomingEventsCellView {
 class UpcomingEventsPresenter {
     
     private weak var view: UpcomingEventsView?
-//    private let interactor = UpcomingEventsInteractor(baseUrl: Constants.BASE_URL)
     let upcomingEventsAPI: UpcomingEventsAPIProtocol = UpcomingEventsAPI()
     private var upcomingEvents = [Event]()
     
@@ -48,24 +47,6 @@ class UpcomingEventsPresenter {
             
         })
     }
-    
-//    func getUpcomingEvents(leagueId: String){
-//        view?.showIndicator()
-//        interactor.getUpcomingEvents(endPoint: Constants.END_POINT_EVENTS + leagueId, completionHandler: { [weak self] upcomingEvents, error in
-//
-//            guard let self = self else { return }
-//            self.view?.hideIndicator()
-//
-//            if let error = error {
-//                self.view?.showError()
-//            } else {
-//                guard let upcomingEvents = upcomingEvents else { return }
-//                self.upcomingEvents = upcomingEvents.events
-//                print("UpcomingEvents Completion handler success \(self.upcomingEvents.count)")
-//                self.view?.fetchingDataSuccess()
-//            }
-//        })
-//    }
     
     func getUpcomingEventsCount() -> Int {
         return upcomingEvents.count

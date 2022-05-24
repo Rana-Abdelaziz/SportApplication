@@ -19,10 +19,6 @@ class TeamsVCPresenter {
         self.view = view
     }
     
-//    func viewDidLoad() {
-//        getTeamsResult()
-//    }
-    
 //    func getTeamsResult(leagueName: String){
 //        view?.showIndicator()
 //        leagueTeamsAPI.getLeagueTeams(leagueName: leagueName, completion: { [weak self] (result) in
@@ -44,7 +40,7 @@ class TeamsVCPresenter {
     
     func getTeamsResult(leagueName: String){
         view?.showIndicator()
-        interactor.getTeamsResult(endPoint: Constants.END_POINT_TEAMS + leagueName, completionHandler: { [weak self] teamsResult, error in
+        interactor.getTeamsResult(endPoint: Constants.END_POINT_TEAMS2 + leagueName, completionHandler: { [weak self] teamsResult, error in
 
             guard let self = self else { return }
             self.view?.hideIndicator()

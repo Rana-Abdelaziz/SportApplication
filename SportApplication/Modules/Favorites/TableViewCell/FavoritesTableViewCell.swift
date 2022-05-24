@@ -17,16 +17,10 @@ class FavoritesTableViewCell: UITableViewCell {
     @IBOutlet weak var youtubeBtn: UIImageView!
     var youtubeLink: String = ""
     
-//    var showAlert: (() -> Void)? = nil
-    
-//    var favoritesPresenter: FavoritesPresenter!
-    
     static let identifier = "FavoritesTableViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-//        favoritesPresenter = FavoritesPresenter(view: self)
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         youtubeBtn.isUserInteractionEnabled = true
@@ -53,35 +47,20 @@ class FavoritesTableViewCell: UITableViewCell {
         self.youtubeLink = youtubeLink
     }
     
-    
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        let _ = tapGestureRecognizer.view as! UIImageView
         
         if InternetConnectionManager.isConnectedToNetwork() {
-            goToYoutube(youtubeLink: youtubeLink)
+            if youtubeLink == "" {
+                Toast(text: "No youtube channel for this league").show()
+            } else {
+                goToYoutube(youtubeLink: youtubeLink)
+            }
+            
         } else {
             Toast(text: "You need to get internet connection before doing this operation!").show()
         }
         
-        
-//        let youtubeId = "SxTYjptEzZs"
-//          let youtubeUrl = NSURL(string:"youtube://\(youtubeId)")!
-//
-//        if UIApplication.shared.canOpenURL(youtubeUrl as URL){
-//            UIApplication.shared.openURL(youtubeUrl as URL)
-//        } else{
-//
-//          let myUrl = youtubeLink
-//          if((myUrl) != ""){
-//              let youtubeUrl = NSURL(string:"https://"+myUrl)!
-//              UIApplication.shared.openURL(youtubeUrl as URL)
-//          }
-  //        else{
-  //            controller.showAlert()
-  //        }
-  //
-//        }
-//        let youtubeLink = favoritesPresenter.
     }
     
     func goToYoutube(youtubeLink: String?) {
@@ -89,7 +68,7 @@ class FavoritesTableViewCell: UITableViewCell {
         let appName = "youtube"
         let appScheme = "\(appName)://app"
         let appUrl = URL(string: appScheme)
-
+        
         if UIApplication.shared.canOpenURL(appUrl! as URL) {
             UIApplication.shared.open(appUrl!)
         } else {
@@ -97,13 +76,5 @@ class FavoritesTableViewCell: UITableViewCell {
         }
 
     }
-    
-//    func showAlert(){
-//        
-//        let alert : UIAlertController = UIAlertController(title: "Internet is not available", message: "You need to get internet connection before doing this operation!", preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-//        
-//        present(alert,animated: true,completion: nil)
-//    }
     
 }

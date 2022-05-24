@@ -94,7 +94,7 @@ extension LeagueDetailsViewController: UITableViewDataSource, UITableViewDelegat
         case 1:
             return 500
         case 2:
-            return 250
+            return 200
         default:
             return 250
         }
